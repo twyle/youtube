@@ -20,6 +20,16 @@ key_words = [
     'create youtube playlist'
 ]
 
+install_requires = [
+    'google-api-python-client', 
+    'google-auth-oauthlib', 
+    'pandas', 
+    'elasticsearch', 
+    'sqlalchemy',
+    'sqlalchemy_utils',
+    'psycopg2-binary'
+]
+
 setup(
     name='youtube',
     packages=find_packages(
@@ -49,7 +59,7 @@ setup(
     author='Lyle Okoth',
     author_email='lyceokoth@gmail.com',
     license='MIT',
-    install_requires=['google-api-python-client', 'google-auth-oauthlib', 'pandas', 'elasticsearch'],
+    install_requires=install_requires,
     keywords=key_words,
     classifiers=[
         "Intended Audience :: Developers",

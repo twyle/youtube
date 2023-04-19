@@ -44,6 +44,8 @@ class YouTube:
             client_secrets_file, credentials_path
         )
         
+    def get_youtube_client(self):
+        return self.__youtube_client
         
     def find_channel_by_id(self, channel_id: str):
         """Find a YouTube channel by id."""

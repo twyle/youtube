@@ -114,7 +114,7 @@ class YouTubeVideo:
             writer = csv.writer(f)
             video_dict = self.to_dict()
             writer.writerow(list(video_dict.keys()))
-            writer.writerow(list(video_dict.items()))
+            writer.writerow(list(video_dict.values()))
     
     def __str__(self):
         return f'{self.get_video_title()} from {self.get_channel_title()}'

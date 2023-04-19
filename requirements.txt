@@ -1,2 +1,7 @@
 google-api-python-client==2.81.0
 google-auth-oauthlib==1.0.0
+sqlalchemy==2.0.9
+psycopg2-binary==2.9.6
+sqlalchemy_utils==0.41.0
+elasticsearch==8.7.0
+pandas==2.0.0
