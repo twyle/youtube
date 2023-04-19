@@ -1,7 +1,7 @@
 """The library entry point."""
 from .oauth import YouTubeAPIAuth
 from .search.channel import FindChannel
-from .search.video import FindVideo
+from .search.video import FindVideo, VideoSearch
 from .exceptions import (
     AuthenticationException
 )
@@ -62,4 +62,10 @@ class YouTube:
         video_finder = FindVideo(self.__youtube_client)
         youtube_video = video_finder.find_video(video_id)
         return youtube_video
+    
+    def search_videos(self, query_string: str):
+        """Search for videos."""
+        video_search = VideoSearch(self.__youtube_client, query_string)
+        search_iterator = video_search.search_videos()
+        return search_iterator 
         

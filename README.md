@@ -33,3 +33,9 @@ video = video = youtube.find_video_by_id('vEQ8CXFWLZU')
 ```python
 channel = youtube.find_channel_by_id('UC8butISFwT-Wl7EV0hUK0BQ')
 ```
+5. To search for videos:
+```python
+query = 'Python programming'
+video_iterator = youtube.search_videos(query)
+videos = next(video_iterator)
+```
