@@ -1,3 +1,9 @@
+## v0.2.0 (2023-04-19)
+
+### Feat
+
+- adds the find video by id functinality.
+
 ## v0.1.0 (2023-04-19)
 
 ### Feat
