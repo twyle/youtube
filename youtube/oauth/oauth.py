@@ -47,7 +47,7 @@ class YouTubeAPIAuth:
             raise ValueError("The credentials file path has to exist!")
         if not Path(credentials_path).is_file():
             raise ValueError("The credentials path must be a file.")
-        with open(credentials_path, "r") as credentials:
+        with open(credentials_path, "r", encoding="utf-8") as credentials:
             self.__credentials = Credentials(**json.load(credentials))
         return self.__from_credentials()
 
@@ -69,7 +69,7 @@ class YouTubeAPIAuth:
     def __from_client_secrets_file(self):
         """Authenticate using the secrets file."""
         if os.path.exists(self.__credentials_path):
-            with open(self.__credentials_path, "r") as credentials:
+            with open(self.__credentials_path, "r", encoding="utf-8") as credentials:
                 self.__credentials = Credentials(**json.load(credentials))
         if not self.__credentials or not self.__credentials.valid:
             if (
@@ -83,7 +83,9 @@ class YouTubeAPIAuth:
                     self.__client_secrets_file, self.__SCOPES
                 )
                 self.__credentials = flow.run_local_server(port=0)
-            with open(self.__credentials_path, "w") as credentials_path:
+            with open(
+                self.__credentials_path, "w", encoding="utf-8"
+            ) as credentials_path:
                 credentials = self.__credentials_to_dict(self.__credentials)
                 json.dump(credentials, credentials_path)
         youtube_api_client = build(
@@ -100,7 +102,9 @@ class YouTubeAPIAuth:
                 and self.__credentials.refresh_token
             ):
                 self.__credentials.refresh(Request())
-            with open(self.__credentials_path, "w") as credentials_path:
+            with open(
+                self.__credentials_path, "w", encoding="utf-8"
+            ) as credentials_path:
                 credentials = self.__credentials_to_dict(self.__credentials)
                 json.dump(credentials, credentials_path)
         youtube_api_client = build(
@@ -125,21 +129,21 @@ class YouTubeAPIAuth:
         )
         auth_url, _ = flow.authorization_url(prompt="consent")
 
-        print("Please go to this URL: {}".format(auth_url))
+        print(f"Please go to this URL: {auth_url}")
         code = input("Enter the authorization code: ")
         flow.fetch_token(code=code)
         self.__credentials = flow.credentials
         credentials_dict = self.__credentials_to_dict(self.__credentials)
-        with open(self.__credentials_path, "w") as credentials_path:
-            json.dump(credentials_dict, credentials_path)
+        with open(self.__credentials_path, "w", encoding="utf-8") as cr_path:
+            json.dump(credentials_dict, cr_path)
 
     def __credentials_to_dict(self, credentials: Credentials) -> dict:
         """Convert credentials to a dict for easy work with Flask."""
-        return dict(
-            token=credentials.token,
-            refresh_token=credentials.refresh_token,
-            token_uri=credentials.token_uri,
-            client_id=credentials.client_id,
-            client_secret=credentials.client_secret,
-            scopes=credentials.scopes,
-        )
+        return {
+            "token": credentials.token,
+            "refresh_token": credentials.refresh_token,
+            "token_uri": credentials.token_uri,
+            "client_id": credentials.client_id,
+            "client_secret": credentials.client_secret,
+            "scopes": credentials.scopes,
+        }

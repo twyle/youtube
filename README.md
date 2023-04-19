@@ -4,5 +4,5 @@ A python library that wraps around the YouTube V3 API. You can use it find, mana
 ## Installation
 
 ```sh
-pip install ayv
+pip install youtube@git+https://github.com/twyle/youtube
 ```

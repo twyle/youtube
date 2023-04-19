@@ -1,5 +1,9 @@
 """The library entry point."""
 from .oauth import YouTubeAPIAuth
+from .search.channel import FindChannel
+from .exceptions import (
+    AuthenticationException
+)
 
 
 class YouTube:
@@ -38,3 +42,13 @@ class YouTube:
         self.__youtube_api_auth.generate_credentials(
             client_secrets_file, credentials_path
         )
+        
+        
+    def find_channel_by_id(self, channel_id: str):
+        """Find a YouTube channel by id."""
+        if not self.__youtube_client:
+            raise AuthenticationException('You have not authenticated this instance.')
+        channel_finder = FindChannel(self.__youtube_client)
+        youtube_channel = channel_finder.find_channel_by_id(channel_id)
+        return youtube_channel
+        
