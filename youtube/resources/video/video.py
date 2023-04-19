@@ -3,6 +3,8 @@ from ...search.channel.find_channel import FindChannel
 from .video_stat import YouTubeVideoStats
 from .video_details import YouTubeVideoDetails
 from googleapiclient.errors import HttpError
+import json
+import csv
 
 
 class YouTubeVideo:
@@ -97,9 +99,22 @@ class YouTubeVideo:
             'channel_title': self.get_channel_title(),
             'channel_thumbnail': self.get_video_channel_thumbnail()
         }
+        
+    def to_json(self, file_path=''):
+        if not file_path:
+            file_path = f'{self.get_video_id()}.json'
+        with open(file_path, 'w', encoding='utf-8') as f:
+            video_dict = self.to_dict()
+            json.dump(video_dict, f)
     
-    def to_csv(self):
-        pass
+    def to_csv(self, file_path=''):
+        if not file_path:
+            file_path = f'{self.get_video_id()}.csv'
+        with open(file_path, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            video_dict = self.to_dict()
+            writer.writerow(list(video_dict.keys()))
+            writer.writerow(list(video_dict.items()))
     
     def __str__(self):
         return f'{self.get_video_title()} from {self.get_channel_title()}'

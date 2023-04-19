@@ -29,12 +29,13 @@ class FindChannel:
     def __parse_channel(self, search_response):
         channel_details = {}
         items = search_response['items'][0]
-        channel_details['id'] = items['id']
-        channel_details['title'] = items['snippet']['title']
-        channel_details['description'] = items['snippet']['description']
-        channel_details['customUrl'] = items['snippet']['customUrl']
-        channel_details['publishedAt'] = items['snippet']['publishedAt']
-        channel_details['thumbnails'] = items['snippet']['thumbnails']
+        channel_details['details'] = dict()
+        channel_details['details']['id'] = items['id']
+        channel_details['details']['title'] = items['snippet']['title']
+        channel_details['details']['description'] = items['snippet']['description']
+        channel_details['details']['customUrl'] = items['snippet']['customUrl']
+        channel_details['details']['publishedAt'] = items['snippet']['publishedAt']
+        channel_details['details']['thumbnails'] = items['snippet']['thumbnails']
         channel_details['statistics'] = dict()
         channel_details['statistics']['viewCount'] = items['statistics']['viewCount']
         channel_details['statistics']['subscriberCount'] = items['statistics']['subscriberCount']

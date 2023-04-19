@@ -1,4 +1,4 @@
-from .stat import Stat
+from ..utils.stat import Stat
 
 
 class YouTubeVideoStats:
