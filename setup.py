@@ -11,7 +11,7 @@ HERE = path.abspath(path.dirname(__file__))
 with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
     LONG_DESCRIPTION = f.read()
 
-VERSION = '0.5.0' 
+VERSION = '0.5.1' 
 DESCRIPTION = 'A python library that wraps around the YouTube V3 API. You can use it find, manage and analyze YouTube resources including Videos, Playlists, Channels and Comments.'
 
 key_words = [
@@ -35,19 +35,17 @@ setup(
     packages=find_packages(
         include=[
             'youtube', 
-            'youtube.resources',
             'youtube.resources.channel',
-            'youtube.resources.comment',
-            'youtube.resources.comment_thread',
-            'youtube.resources.playlist',
             'youtube.resources.video',
-            'youtube.resources.video_category',
+            'youtube.resources.utils',
             'youtube.oauth',
             'youtube.exceptions',
-            'youtube.search.category',
+            'youtube.search',
             'youtube.search.channel',
-            'youtube.search.playlist',
-            'youtube.search.video'
+            'youtube.search.video',
+            'youtube.storage',
+            'youtube.storage.sql',
+            'youtube.storage.sql.models'
         ]
         ),
     version=VERSION,
