@@ -1,3 +1,13 @@
+## v0.5.0 (2023-04-20)
+
+### Feat
+
+- returns the page tokens
+
+### Fix
+
+- adds the init files.
+
 ## v0.4.0 (2023-04-20)
 
 ### Feat
