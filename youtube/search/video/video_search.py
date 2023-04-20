@@ -12,7 +12,12 @@ class VideoSearch:
         return []
     
     
-    def search_videos(self):
+    def get_iterator(self):
         if not self.__search:
             self.__search = Search(self.__youtube_client, self.__query_string)
         return self.__search
+    
+    def search_videos(self, next_page_token='', previous_page_token=''):
+        if not self.__search:
+            self.__search = Search(self.__youtube_client, self.__query_string)
+        return self.__search.search_videos(next_page_token, previous_page_token)

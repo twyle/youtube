@@ -49,6 +49,27 @@ class Search:
             videos.append(youtube_video)
         self.__videos.add_videos(videos)
         return videos
+    
+    def search_videos(self, next_page_token='', previous_page_token=''):
+        videos = []
+        search_params = self.__generate_search_params()
+        if next_page_token:
+            search_params['pageToken'] = next_page_token
+        elif previous_page_token:
+            search_params['pageToken'] = previous_page_token
+        search_request = self.__youtube_client.search().list(
+            **search_params
+        )
+        search_response = search_request.execute()
+        previous_page = search_response.get('prevPageToken', '')
+        next_page = search_response.get('nextPageToken', '')
+        video_results = search_response['items']
+        for video_result in video_results:
+            video_id = video_result['id']['videoId']
+            youtube_video = FindVideo(self.__youtube_client).find_video(video_id)
+            videos.append(youtube_video)
+        return previous_page, next_page, videos
+        
         
     def __iter__(self):
         return self

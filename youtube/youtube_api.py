@@ -63,9 +63,17 @@ class YouTube:
         youtube_video = video_finder.find_video(video_id)
         return youtube_video
     
-    def search_videos(self, query_string: str):
+    def get_iterator(self, query_string: str):
         """Search for videos."""
+        if not self.__youtube_client:
+            raise AuthenticationException('You have not authenticated this instance.')
         video_search = VideoSearch(self.__youtube_client, query_string)
-        search_iterator = video_search.search_videos()
+        search_iterator = video_search.get_iterator()
         return search_iterator 
+    
+    def get_search_client(self, query_string: str):
+        if not self.__youtube_client:
+            raise AuthenticationException('You have not authenticated this instance.')
+        video_search = VideoSearch(self.__youtube_client, query_string)
+        return video_search
         
