@@ -1,3 +1,9 @@
+## v0.5.1 (2023-04-20)
+
+### Fix
+
+- fixes the search module erro.
+
 ## v0.5.0 (2023-04-20)
 
 ### Feat
