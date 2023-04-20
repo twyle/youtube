@@ -1,3 +1,9 @@
+## v0.6.0 (2023-04-20)
+
+### Feat
+
+- restructured the setup.
+
 ## v0.5.1 (2023-04-20)
 
 ### Fix
