@@ -34,6 +34,8 @@ setup(
     packages=find_packages(
         include=[
             'youtube',
+            'youtube.models',
+            'youtube.schemas'
         ]
     ),
     version=VERSION,
