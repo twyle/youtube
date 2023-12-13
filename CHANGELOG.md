@@ -1,3 +1,9 @@
+## v0.3.0 (2023-12-13)
+
+### Feat
+
+- adds the video functionality.
+
 ## v0.2.0 (2023-12-13)
 
 ### Feat
