@@ -1,8 +1,9 @@
-from pydantic import BaseModel, Field
-from .comment import Comment
 from typing import Optional
-from .resource import Resource
 
+from pydantic import BaseModel, Field
+
+from .comment import Comment
+from .resource import Resource
 
 
 class Snippet(BaseModel):

@@ -1,9 +1,10 @@
-from .resource import Resource
-from .snippet import BaseSnippet
-from .content_details import BaseContentDetails
-from .resource_id import ResourceId
-from .thumbnail import Thumbnail
 from pydantic import BaseModel
+
+from .content_details import BaseContentDetails
+from .resource import Resource
+from .resource_id import ResourceId
+from .snippet import BaseSnippet
+from .thumbnail import Thumbnail
 
 
 class SubscriptionSnippet(BaseSnippet):

@@ -1,36 +1,47 @@
-from .comment import (
-    Comment, Author
-)
-from .channel import (
-    Channel, ChannelSnippet, ChannelContentDetails, ChannelStatistics, ChannelStatus
-)
-from .comment import Comment, Author
-from .comment_thread import CommentThread
-from .playlist_item import PlaylistItem
-from .playlist import Playlist
-from .video import Video, Localized, Statistics, Status, ContentDetails
-from .video_category import VideoCategory
 from .activity import Activity, ActivityContentDetails, ActivitySnippet
+from .activity_type import (
+    Activities,
+    ActivityType,
+    Bulletin,
+    ChannelItem,
+    CommentAdded,
+    PromotedItem,
+    Reccomendation,
+    ResourceId,
+    ShareToSocial,
+    UserSubscribedToChannel,
+    VideoAddedToFavorite,
+    VideoAddedToPlaylist,
+    VideoLiked,
+    VideoUploaded,
+)
 from .caption import Caption
+from .channel import (
+    Channel,
+    ChannelContentDetails,
+    ChannelSnippet,
+    ChannelStatistics,
+    ChannelStatus,
+)
 from .channel_banner import ChannelBanner
 from .channel_section import ChannelSection, ChannelSectionType
-from .language import Language
-from .region import Region
-from .watermark import WaterMark
-from .video_abuse_report_reason import VideoAbuseReportReason
-from .thumbnail import Thumbnail, ThumbnailResolution
-from .search import Search
-from .subscription import Subscription
-from .scopes import Scopes
-from .resource_type import ResourceType
-from .localized import Localized
-from .resource import Resource
-from .subscription import Subscription
-from .snippet import BaseSnippet
+from .comment import Author, Comment
+from .comment_thread import CommentThread
 from .content_details import BaseContentDetails
+from .language import Language
+from .localized import Localized
+from .playlist import Playlist
+from .playlist_item import PlaylistItem
+from .region import Region
+from .resource import Resource
+from .resource_type import ResourceType
+from .scopes import Scopes
+from .search import Search
+from .snippet import BaseSnippet
 from .status import BaseStatus
-from .activity_type import (
-    ActivityType, Activities, VideoAddedToFavorite, VideoAddedToPlaylist,
-    VideoLiked, VideoUploaded, ChannelItem, CommentAdded, ShareToSocial, UserSubscribedToChannel,
-    PromotedItem, Bulletin, ResourceId, Reccomendation
-)
+from .subscription import Subscription
+from .thumbnail import Thumbnail, ThumbnailResolution
+from .video import ContentDetails, Statistics, Status, Video
+from .video_abuse_report_reason import VideoAbuseReportReason
+from .video_category import VideoCategory
+from .watermark import WaterMark

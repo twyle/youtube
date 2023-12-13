@@ -1,5 +1,7 @@
-from pydantic import BaseModel, Field
 from enum import Enum, auto
+
+from pydantic import BaseModel, Field
+
 from .resource import Resource
 
 

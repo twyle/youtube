@@ -1,9 +1,12 @@
-from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
+
+from pydantic import BaseModel
+
 from ..models.resource import Resource
-from .thumbnail import Thumbnail
 from .localized import Localized
+from .thumbnail import Thumbnail
+
 
 class Snippet(BaseModel):
     title: str

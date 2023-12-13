@@ -1,10 +1,12 @@
-from pydantic import BaseModel, Field
 from typing import Optional
-from .youtube_request import Part, Filter, OptionalParameters
+
+from pydantic import BaseModel, Field
+
+from .youtube_request import Filter, OptionalParameters, Part
 
 
 class CommentThreadPart(Part, BaseModel):
-    part: list[str] = Field(default=['id','replies', 'snippet'])
+    part: list[str] = Field(default=['id', 'replies', 'snippet'])
 
 
 class CommentThreadFilter(Filter, BaseModel):

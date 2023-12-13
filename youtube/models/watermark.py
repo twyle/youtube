@@ -1,9 +1,12 @@
-from pydantic import BaseModel
 from enum import Enum, auto
+
+from pydantic import BaseModel
+
 
 class TimingType(Enum):
     OffsetFromStart = auto()
     OffsetFromEnd = auto()
+
 
 class WaterMark(BaseModel):
     timing_type: TimingType

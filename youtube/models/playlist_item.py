@@ -1,10 +1,13 @@
-from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
+
+from pydantic import BaseModel
+
 from ..models.resource import Resource
-from .thumbnail import Thumbnail
 from .resource_id import ResourceId
 from .status import Status
+from .thumbnail import Thumbnail
+
 
 class Snippet(BaseModel):
     title: str
@@ -19,10 +22,12 @@ class Snippet(BaseModel):
     published_at: Optional[datetime] = None
     position: Optional[int] = 0
 
+
 class ContentDetails(BaseModel):
     video_id: str
     video_published_at: Optional[datetime] = None
     note: Optional[str] = ''
+
 
 class PlaylistItem(Resource):
     id: str

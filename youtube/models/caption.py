@@ -1,6 +1,7 @@
-from pydantic import BaseModel
 from datetime import datetime
 from enum import Enum, auto
+
+from pydantic import BaseModel
 
 
 class TrackKind(Enum):
@@ -8,21 +9,25 @@ class TrackKind(Enum):
     Forced = auto()
     Standard = auto()
 
+
 class AudioTrackType(Enum):
     Commentary = auto()
     Descriptive = auto()
     Primary = auto()
     Unknown = auto()
 
+
 class Status(Enum):
     Failed = auto()
     Serving = auto()
     Syncing = auto()
 
+
 class FailureReason(Enum):
     ProcessingFailed = auto()
     UnknownFormat = auto()
     UnsupportedFormat = auto()
+
 
 class Caption(BaseModel):
     video_id: str

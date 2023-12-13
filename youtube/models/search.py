@@ -1,13 +1,17 @@
-from pydantic import BaseModel, Field
-from enum import Enum, auto
 from datetime import datetime
-from .thumbnail import Thumbnail
+from enum import Enum, auto
+
+from pydantic import BaseModel, Field
+
 from .resource import Resource
+from .thumbnail import Thumbnail
+
 
 class LiveBroadcastContent(Enum):
     Upcoming = auto()
     Live = auto()
     Null = auto()
+
 
 class Search(Resource):
     resource_id: str

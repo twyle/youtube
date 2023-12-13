@@ -1,10 +1,11 @@
+from typing import Optional
+
 from pydantic import BaseModel
+
 from .activity_type import ActivityType
+from .content_details import BaseContentDetails
 from .resource import Resource
 from .snippet import BaseSnippet
-from typing import Optional
-from .content_details import BaseContentDetails
-from .activity_type import ActivityType
 
 
 class ActivitySnippet(BaseSnippet):

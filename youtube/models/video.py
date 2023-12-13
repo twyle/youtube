@@ -1,13 +1,16 @@
-from pydantic import BaseModel, Field
 from datetime import datetime
 from typing import Optional
-from .thumbnail import Thumbnail
+
+from pydantic import BaseModel, Field
+
 from .resource import Resource
+from .thumbnail import Thumbnail
 
 
 class RegionRestriction(BaseModel):
     allowed: list[str] = Field(default_factory=list)
     blocked: list[str] = Field(default_factory=list)
+
 
 class ContentRating(BaseModel):
     pass
@@ -25,14 +28,17 @@ class Status(BaseModel):
     made_for_kids: bool
     self_declared_made_for_kids: bool
 
+
 class Statistics(BaseModel):
     views_count: int
     likes_count: int
     comments_count: int
 
+
 class Localized(BaseModel):
     title: str
     description: str
+
 
 class Snippet(BaseModel):
     title: str
@@ -47,8 +53,10 @@ class Snippet(BaseModel):
     default_language: str = None
     localized: Localized
 
+
 class ContentRatings(BaseModel):
     pass
+
 
 class ContentDetails(BaseModel):
     duration: str

@@ -1,11 +1,13 @@
-from pydantic import BaseModel
 from typing import Optional
+
+from pydantic import BaseModel
 
 
 class ThumbnailResolution(BaseModel):
     url: str
     width: int
     height: int
+
 
 class Thumbnail(BaseModel):
     default: Optional[ThumbnailResolution] = None

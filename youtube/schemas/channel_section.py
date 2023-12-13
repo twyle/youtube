@@ -1,6 +1,8 @@
-from pydantic import Field, BaseModel
 from typing import Optional
-from .youtube_request import Part, Filter, OptionalParameters
+
+from pydantic import BaseModel, Field
+
+from .youtube_request import Filter, OptionalParameters, Part
 
 
 class ChannelSectionPart(Part):

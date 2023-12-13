@@ -1,11 +1,15 @@
-from pydantic import Field
-from typing import Optional
-from .youtube_request import Part, Filter, OptionalParameters
 from datetime import datetime
+from typing import Optional
+
+from pydantic import Field
+
+from .youtube_request import Filter, OptionalParameters, Part
 
 
 class SubscriptionPart(Part):
-    part: list[str] = Field(default=['contentDetails', 'id', 'snippet', 'subscriberSnippet'])
+    part: list[str] = Field(
+        default=['contentDetails', 'id', 'snippet', 'subscriberSnippet']
+    )
 
 
 class SubscriptionFilter(Filter):

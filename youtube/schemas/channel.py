@@ -1,11 +1,21 @@
-from pydantic import Field
 from typing import Optional
-from .youtube_request import Part, Filter, OptionalParameters
+
+from pydantic import Field
+
+from .youtube_request import Filter, OptionalParameters, Part
 
 
 class ChannelPart(Part):
-    part: list[str] = Field(default=['contentDetails', 'id','localizations',
-        'snippet','statistics', 'status'])
+    part: list[str] = Field(
+        default=[
+            'contentDetails',
+            'id',
+            'localizations',
+            'snippet',
+            'statistics',
+            'status',
+        ]
+    )
 
 
 class ChannelFilter(Filter):

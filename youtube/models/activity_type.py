@@ -1,6 +1,8 @@
-from pydantic import BaseModel
-from .resource_type import ResourceType
 from enum import Enum, auto
+
+from pydantic import BaseModel
+
+from .resource_type import ResourceType
 
 
 class Activities(Enum):
@@ -24,6 +26,7 @@ class ResourceId(BaseModel):
 
 class ActivityType(BaseModel):
     pass
+
 
 class VideoUploaded(ActivityType):
     video_id: str

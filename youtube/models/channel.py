@@ -1,10 +1,11 @@
-from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
-from .snippet import BaseSnippet
-from .resource import Resource
+
+from pydantic import BaseModel, Field
+
 from .content_details import BaseContentDetails
-from pydantic import Field
+from .resource import Resource
+from .snippet import BaseSnippet
 from .status import BaseStatus
 
 
@@ -14,7 +15,9 @@ class ChannelSnippet(BaseSnippet):
 
 
 class RelatedPlaylists(BaseModel):
-    likes: str = Field(description="The ID of the playlist that contains the channel's liked videos.")
+    likes: str = Field(
+        description="The ID of the playlist that contains the channel's liked videos."
+    )
     uploads: str
 
 

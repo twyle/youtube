@@ -34,10 +34,10 @@ bump-tag:
 # build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert|bump
 
 lint:
-	@black auth/
-	@isort auth/
-	@flake8 auth/
+	@black youtube/
+	@isort youtube/
+	@flake8 youtube/
 
 install-youtube:
-	pip uninstall /home/lyle/libraries/youtube/dist/oryks_youtube-0.1.0-py3-none-any.whl
-	pip install /home/lyle/libraries/youtube/dist/oryks_youtube-0.1.0-py3-none-any.whl
+	pip uninstall /home/lyle/libraries/youtube/dist/oryks_youtube-0.2.0-py3-none-any.whl
+	pip install /home/lyle/libraries/youtube/dist/oryks_youtube-0.2.0-py3-none-any.whl

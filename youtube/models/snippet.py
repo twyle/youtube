@@ -1,7 +1,9 @@
-from pydantic import BaseModel
-from .thumbnail import Thumbnail
-from .localized import Localized
 from datetime import datetime
+
+from pydantic import BaseModel
+
+from .localized import Localized
+from .thumbnail import Thumbnail
 
 
 class BaseSnippet(BaseModel):
