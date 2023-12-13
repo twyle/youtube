@@ -38,6 +38,6 @@ lint:
 	@isort auth/
 	@flake8 auth/
 
-install-oauth:
-	pip uninstall /home/lyle/libraries/google-oauth/dist/oryks_google_oauth-0.0.2-py3-none-any.whl
-	pip install /home/lyle/libraries/google-oauth/dist/oryks_google_oauth-0.0.2-py3-none-any.whl
+install-youtube:
+	pip uninstall /home/lyle/libraries/youtube/dist/oryks_youtube-0.0.1-py3-none-any.whl
+	pip install /home/lyle/libraries/youtube/dist/oryks_youtube-0.0.1-py3-none-any.whl
