@@ -35,7 +35,8 @@ setup(
         include=[
             'youtube',
             'youtube.models',
-            'youtube.schemas'
+            'youtube.schemas',
+            'youtube.resources'
         ]
     ),
     version=VERSION,
