@@ -12,14 +12,14 @@ The library is modelled after [Google's own documentation](https://developers.go
 ## Installation
 
 ```sh
-pip install ayv
+pip install oryks-youtube
 ```
 
 ## Get started
 To get started, you need a verified Google Account and Google API keys with the correct permissions.
 
 ### How to Get A Google API Key
-Follow the instructions in this short [article](https://blog.hubspot.com/website/how-to-get-youtube-api-key) to get an API key.
+Follow the instructions in this short [article](https://medium.com/@lyle-okoth/how-to-get-a-google-api-key-d3c38649eaae) to get an API key.
 
 
 To get a particular video using the videos' id:
