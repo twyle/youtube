@@ -1,3 +1,9 @@
+## v0.3.1 (2023-12-14)
+
+### Fix
+
+- updates the import statements.
+
 ## v0.3.0 (2023-12-13)
 
 ### Feat
