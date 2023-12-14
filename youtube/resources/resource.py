@@ -123,7 +123,7 @@ class YouTubeResource(ABC):
         pass
 
     @abstractmethod
-    def parse_items(self, search_result_items: list[dict]) -> list[Resource]:
+    def parse_items(self, items: list[dict]) -> list[Resource]:
         pass
 
     def parse_youtube_response(self, youtube_response: dict) -> YouTubeResponse:

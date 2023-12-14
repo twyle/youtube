@@ -5,6 +5,7 @@ from oryks_google_oauth import GoogleOAuth, YouTubeScopes
 from pydantic import BaseModel
 
 from .models import Video
+from .resources import YouTubeSearch
 from .schemas import VideoReportAbuse, YouTubeRequest, YouTubeResponse
 
 
@@ -70,7 +71,9 @@ class YouTube(BaseModel):
         YouTubeResponse:
             An instance of YouTubeResponse that has al the search results.
         """
-        pass
+        search: YouTubeSearch = YouTubeSearch(youtube_client=self.youtube_client)
+        search_results: YouTubeResponse = search.search(search_schema)
+        return search_results
 
     def get_search_iterator(self, search_schema: YouTubeRequest) -> Iterator:
         """Return an iterator that can be used to iterate over search results.

@@ -17,5 +17,5 @@ class OptionalParameters(BaseModel):
 
 class YouTubeRequest(BaseModel):
     part: Part
-    filter: Optional[Filter] = Field(default_factory=list)
+    filter: Optional[Filter] = Filter()
     optional_parameters: Optional[OptionalParameters] = OptionalParameters()
