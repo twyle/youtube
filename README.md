@@ -46,9 +46,26 @@ popular_kenyan_videos = youtube.find_most_popular_video_by_region('ke')
 ```
 5. To search for videos (this returns an iterator):
 ```python
-query = 'Python programming'
-video_iterator = youtube.search_video('Python')
-videos = next(video_iterator)
+from youtube.schemas import (
+    SearchFilter, SearchOptionalParameters, SearchPart, YouTubeResponse, YouTubeRequest
+)
+from typing import Iterator
+from youtube.models import Video
+
+query: str = 'Python programming videos'
+max_results: int = 10
+part: SearchPart = SearchPart()
+optional_parameters: SearchOptionalParameters = SearchOptionalParameters(
+    q=query,
+    maxResults=max_results,
+    type=['video', 'playlist', 'channel']
+)
+search_request: YouTubeRequest = YouTubeRequest(
+    part=part,
+    optional_parameters=optional_parameters
+)
+video_iterator: Iterator = youtube.get_search_iterator(search_request)
+videos: list[Video] = next(video_iterator)
 ```
 
 ## Documentation and Tutorials
