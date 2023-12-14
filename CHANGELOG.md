@@ -1,3 +1,9 @@
+## v0.5.0 (2023-12-14)
+
+### Feat
+
+- adds the search functionality.
+
 ## v0.4.0 (2023-12-14)
 
 ### Feat
