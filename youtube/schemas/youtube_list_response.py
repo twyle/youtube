@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from ...models.resource import Resource
+from ..models.resource import Resource
 
 
 class YouTubeListResponse(BaseModel):

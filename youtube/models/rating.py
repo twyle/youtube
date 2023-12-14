@@ -1,4 +1,4 @@
-from ..resources.schemas.resource_schema import Resource
+from .resource import Resource
 
 
 class YouTubeVideoRating(Resource):

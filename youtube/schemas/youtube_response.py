@@ -2,7 +2,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from ...models.resource import Resource
+from ..models.resource import Resource
 from .common import PageInfo
 
 

@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from ...models.rating import YouTubeVideoRating
+from ..models.rating import YouTubeVideoRating
 
 
 class YouTubeRatingResponse(BaseModel):
