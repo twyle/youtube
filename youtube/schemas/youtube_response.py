@@ -3,7 +3,7 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 from ..models.resource import Resource
-from .common import PageInfo
+from .page_info import PageInfo
 
 
 class YouTubeResponse(BaseModel):

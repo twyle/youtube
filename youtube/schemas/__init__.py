@@ -10,11 +10,11 @@ from .channel_section import (
 )
 from .comment_thread import CommentThreadFilter, CommentThreadOptionalParameters, CommentThreadPart
 from .language_response import LanguageResponse
+from .page_info import PageInfo
 from .playlist import (
     CreatePlaylistSchema,
     CreatePlaylistSnippet,
     CreateStatus,
-    Filter,
     PlaylistFilter,
     PlaylistOptionalParameters,
     PlaylistPart,
