@@ -1,3 +1,13 @@
+## v0.4.0 (2023-12-14)
+
+### Feat
+
+- adds the base resource class functionality.
+
+### Fix
+
+- adds the resources package.
+
 ## v0.3.1 (2023-12-14)
 
 ### Fix
