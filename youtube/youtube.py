@@ -16,7 +16,7 @@ from .models import (
     Video,
     VideoCategory,
 )
-from .resources import YouTubeSearch
+from .resources import YouTubeSearch, YouTubeVideo
 from .schemas import (
     CreatePlaylist,
     CreatePlaylistItem,
@@ -28,6 +28,7 @@ from .schemas import (
     VideoReportAbuse,
     VideoReportReasonResponse,
     YouTubeListResponse,
+    YouTubeRatingResponse,
     YouTubeRequest,
     YouTubeResponse,
 )
@@ -129,7 +130,7 @@ class YouTube(BaseModel):
         search: YouTubeSearch = YouTubeSearch(youtube_client=self.youtube_client)
         return search.find_channel_by_name(display_name)
 
-    def get_video_ratings(self, video_ids: list[str]) -> list[str]:
+    def get_video_ratings(self, video_ids: list[str]) -> YouTubeRatingResponse:
         """Find out whether or not you liked the videos whose ids are provided.
 
         You provide it with a list of video ids and for each video it will tell you whether
@@ -144,9 +145,10 @@ class YouTube(BaseModel):
         list[str]:
             A list of strings showing whether or not you liked a given video.
         """
-        pass
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.get_video_ratings(video_ids)
 
-    def find_video_by_id(self, video_id: str) -> Video:
+    def find_video_by_id(self, video_id: str) -> YouTubeListResponse:
         """Find a single video by providing the video's id.
 
         Parameters
@@ -158,9 +160,10 @@ class YouTube(BaseModel):
         Video:
             A Video instance
         """
-        pass
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.find_video_by_id(video_id)
 
-    def find_videos(self, video_ids: list[str]) -> list[Video]:
+    def find_videos_by_ids(self, video_ids: list[str]) -> YouTubeListResponse:
         """Find a many videos by providing a list of video ids.
 
         Parameters
@@ -172,7 +175,8 @@ class YouTube(BaseModel):
         list[Video]:
             A list of Video instances
         """
-        pass
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.find_videos_by_ids(video_ids)
 
     def find_most_popular_video_by_region(
         self, region_code: str = 'US', category_id: str = ''
@@ -216,7 +220,8 @@ class YouTube(BaseModel):
 
     def rate_video(self, video_id: str, rating: str) -> None:
         """Add a like or dislike rating to a video or remove a rating from a video."""
-        raise NotImplementedError()
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        video.rate_video(video_id, rating)
 
     def find_channel_by_id(self, channel_id: str) -> Channel:
         """Find a youtube channel given its id."""
@@ -288,7 +293,8 @@ class YouTube(BaseModel):
         self, region_code: Optional[str] = ''
     ) -> list[VideoCategory]:
         """List all the video categories on youtube."""
-        raise NotImplementedError()
+        youtube_video = YouTubeVideo(youtube_client=self.youtube_client)
+        return youtube_video.get_video_categories(region_code=region_code)
 
     def find_video_comments(self, request: YouTubeRequest) -> YouTubeResponse:
         """Get a particular video's comments."""

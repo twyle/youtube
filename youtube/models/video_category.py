@@ -1,7 +1,14 @@
 from pydantic import BaseModel
 
+from .resource import Resource
 
-class VideoCategory(BaseModel):
-    video_category_id: str
+
+class VideoCategorySnippet(BaseModel):
     title: str
     assignable: bool
+    channel_id: str
+
+
+class VideoCategory(Resource):
+    id: str
+    snippet: VideoCategorySnippet

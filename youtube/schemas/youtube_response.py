@@ -1,15 +1,8 @@
 from typing import Optional
 
-from pydantic import BaseModel, Field
-
-from ..models.resource import Resource
-from .page_info import PageInfo
+from .youtube_list_response import YouTubeListResponse
 
 
-class YouTubeResponse(BaseModel):
-    kind: str
-    etag: str
-    pageInfo: PageInfo
-    items: list[Resource] = Field(default_factory=list)
+class YouTubeResponse(YouTubeListResponse):
     nextPageToken: Optional[str] = ''
     prevPageToken: Optional[str] = ''

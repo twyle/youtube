@@ -43,5 +43,5 @@ from .subscription import Subscription
 from .thumbnail import Thumbnail, ThumbnailResolution
 from .video import ContentDetails, Statistics, Status, Video
 from .video_abuse_report_reason import VideoAbuseReportReason
-from .video_category import VideoCategory
+from .video_category import VideoCategory, VideoCategorySnippet
 from .watermark import WaterMark

@@ -9,7 +9,15 @@ from ..models import (
     Thumbnail,
     ThumbnailResolution,
 )
-from ..schemas import Filter, OptionalParameters, PageInfo, Part, YouTubeRequest, YouTubeResponse
+from ..schemas import (
+    Filter,
+    OptionalParameters,
+    PageInfo,
+    Part,
+    YouTubeListResponse,
+    YouTubeRequest,
+    YouTubeResponse,
+)
 
 
 class YouTubeResource(ABC):
@@ -65,9 +73,9 @@ class YouTubeResource(ABC):
         request_dict.update(self.generate_filter(request_schema.filter))
         return request_dict
 
-    def parse_id(self, search_response: dict) -> dict:
+    def parse_id(self, item: dict) -> dict:
         """Get the resource id from the youtube response."""
-        return dict(id=search_response['id'])
+        return dict(id=item['id'])
 
     def parse_thumbnail(
         self, thumbnail_data: dict[str, int | str]
@@ -122,17 +130,25 @@ class YouTubeResource(ABC):
     def parse_item(self, item: dict) -> Resource:
         pass
 
-    @abstractmethod
     def parse_items(self, items: list[dict]) -> list[Resource]:
-        pass
+        parsed_items: list[Resource] = [self.parse_item(item) for item in items]
+        return parsed_items
+
+    def parse_youtube_list_response(
+        self, youtube_list_response: dict
+    ) -> YouTubeListResponse:
+        youtube_result: YouTubeListResponse = YouTubeListResponse(
+            kind=youtube_list_response['kind'],
+            etag=youtube_list_response['etag'],
+            pageInfo=PageInfo(**youtube_list_response['pageInfo']),
+            items=self.parse_items(youtube_list_response['items']),
+        )
+        return youtube_result
 
     def parse_youtube_response(self, youtube_response: dict) -> YouTubeResponse:
-        youtube_result: YouTubeResponse = YouTubeResponse(
-            kind=youtube_response['kind'],
-            etag=youtube_response['etag'],
-            nextPageToken=youtube_response.get('nextPageToken', ''),
-            prevPageToken=youtube_response.get('prevPageToken', ''),
-            pageInfo=PageInfo(**youtube_response['pageInfo']),
-            items=self.parse_items(youtube_response['items']),
+        youtube_result: YouTubeResponse = self.parse_youtube_list_response(
+            youtube_response
         )
+        youtube_result.nextPageToken = youtube_response.get('nextPageToken', '')
+        youtube_result.prevPageToken = youtube_response.get('prevPageToken', '')
         return youtube_result

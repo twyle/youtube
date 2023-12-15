@@ -65,10 +65,6 @@ class YouTubeSearch(YouTubeResource):
         )
         return parsed_item
 
-    def parse_items(self, items: list[dict]) -> list[Search]:
-        parsed_items: list[Search] = [self.parse_item(item) for item in items]
-        return parsed_items
-
     def search(self, search_schema: YouTubeRequest) -> YouTubeResponse:
         search_dict: dict[str, Any] = self.create_request_dict(search_schema)
         search_request = self.youtube_client.search().list(**search_dict)

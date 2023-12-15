@@ -36,7 +36,8 @@ setup(
             'youtube.models',
             'youtube.schemas',
             'youtube.resources',
-            'youtube.resources.search'
+            'youtube.resources.search',
+            'youtube.resources.video'
         ]
     ),
     version=VERSION,
