@@ -1,3 +1,9 @@
+## v0.6.1 (2023-12-15)
+
+### Fix
+
+- adds the oauth requirements.
+
 ## v0.6.0 (2023-12-15)
 
 ### Feat
