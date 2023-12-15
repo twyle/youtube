@@ -13,7 +13,7 @@ the PyPy implementation.
 .. _intro-install-youtube:
 
 Install youtube
-===========
+===============
 
 You can install youtube from GitHub or from PyPi
 
@@ -24,4 +24,4 @@ To install from GitHub, run:
 
 .. code-block::
 
-    pip install youtube
+    pip install oryks-youtube

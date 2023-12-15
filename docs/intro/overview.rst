@@ -1,8 +1,8 @@
 .. _intro-overview:
 
-===============
+===================
 youtube at a glance
-===============
+===================
 
 youtube is a python library that enables the user to find and manage YouTube resources.
 These resources include Videos, Channels, Comments and PlayLists.
@@ -23,21 +23,37 @@ To make the call, you will need anAPI key. Follow the steps in the article and r
 
 How to get an API Key from Google. `API_KEY`_.
 
-.. _API_KEY: https://blog.hubspot.com/website/how-to-get-youtube-api-key
+.. _API_KEY: https://medium.com/@lyle-okoth/how-to-get-a-google-api-key-d3c38649eaae
 
 Here's the code that searches YouTube and returns an iterator:
 
 .. code-block:: python
 
     from youtube import YouTube
+    from youtube.schemas import (
+        SearchFilter, SearchOptionalParameters, SearchPart, YouTubeResponse, YouTubeRequest
+    )
+    from typing import Iterator
 
     def search_videos():
         clients_secret_file = '/home/user/Downloads/clients_secret.json'
         youtube = YouTube(clients_secret_file)
         youtube.authenticate()
-        query = 'python programming for beginners'
-        video_iterator = youtube.search_video(query, max_results=2)
-        print(next(video_iterator))
+        query: str = 'Python programming videos'
+        max_results: int = 10
+        part: SearchPart = SearchPart()
+        optional_parameters: SearchOptionalParameters = SearchOptionalParameters(
+            q=query,
+            maxResults=max_results,
+            type=['video', 'playlist', 'channel']
+        )
+        search_request: YouTubeRequest = YouTubeRequest(
+            part=part,
+            optional_parameters=optional_parameters
+        )
+        search_results: YouTubeResponse = youtube.search(search_request)
+        search_iterator: Iterator = youtube.get_search_iterator(search_request)
+        print(next(search_iterator.items))
 
     if __name__ == '__main__':
         search_videos()

@@ -35,7 +35,7 @@ First steps
    :caption: Python API:
 
    source/api/youtube
-   source/api/models/video_model
+   source/api/models/video
 
 Indices and tables
 ==================
