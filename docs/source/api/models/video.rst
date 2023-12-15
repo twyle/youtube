@@ -1,6 +1,6 @@
-==============
+=====
 Video
-==============
+=====
 
 .. currentmodule:: youtube.models.video
 

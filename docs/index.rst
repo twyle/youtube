@@ -36,6 +36,7 @@ First steps
 
    source/api/youtube
    source/api/models/video
+   source/api/models/search
 
 Indices and tables
 ==================
