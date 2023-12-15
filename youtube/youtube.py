@@ -87,7 +87,8 @@ class YouTube(BaseModel):
         Iterator:
             An iterator that can be used to iterate over the search results.
         """
-        pass
+        search: YouTubeSearch = YouTubeSearch(youtube_client=self.youtube_client)
+        return search.get_search_iterator(search_schema)
 
     def find_channel_by_name(self, display_name: str) -> YouTubeResponse:
         """Find a channel's details when given the channel title.
@@ -101,7 +102,8 @@ class YouTube(BaseModel):
         YouTubeResponse:
             A youtube response consisting of channels whose names match the provided names
         """
-        pass
+        search: YouTubeSearch = YouTubeSearch(youtube_client=self.youtube_client)
+        return search.find_channel_by_name(display_name)
 
     def get_video_ratings(self, video_ids: list[str]) -> list[str]:
         """Find out whether or not you liked the videos whose ids are provided.

@@ -85,15 +85,6 @@ class YouTubeSearch(YouTubeResource):
         )
         return self.search(search_request)
 
-    def search_by_location(self, query: str) -> Iterator:
-        raise NotImplementedError()
-
-    def search_live_events(self, query: str) -> Iterator:
-        raise NotImplementedError()
-
-    def search_my_videos(self, query: str) -> Iterator:
-        raise NotImplementedError()
-
     def __iter__(self):
         return self
 
