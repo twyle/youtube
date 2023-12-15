@@ -23,8 +23,7 @@ key_words = [
 ]
 
 install_requires = [
-    'google-api-python-client',
-    'google-auth-oauthlib',
+    'oryks-google-oauth',
     'pydantic',
     'pydantic-settings'
 ]
