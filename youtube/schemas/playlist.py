@@ -34,6 +34,6 @@ class CreateStatus(BaseModel):
     privacyStatus: str
 
 
-class CreatePlaylistSchema(BaseModel):
+class CreatePlaylist(BaseModel):
     snippet: CreatePlaylistSnippet
     status: Optional[CreateStatus] = None

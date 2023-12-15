@@ -12,7 +12,7 @@ from .comment_thread import CommentThreadFilter, CommentThreadOptionalParameters
 from .language_response import LanguageResponse
 from .page_info import PageInfo
 from .playlist import (
-    CreatePlaylistSchema,
+    CreatePlaylist,
     CreatePlaylistSnippet,
     CreateStatus,
     PlaylistFilter,

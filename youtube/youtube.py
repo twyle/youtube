@@ -4,9 +4,33 @@ from typing import Any, Optional
 from oryks_google_oauth import GoogleOAuth, YouTubeScopes
 from pydantic import BaseModel
 
-from .models import Video
+from .models import (
+    Caption,
+    Channel,
+    ChannelSection,
+    Comment,
+    CommentThread,
+    Playlist,
+    PlaylistItem,
+    Subscription,
+    Video,
+    VideoCategory,
+)
 from .resources import YouTubeSearch
-from .schemas import VideoReportAbuse, YouTubeRequest, YouTubeResponse
+from .schemas import (
+    CreatePlaylist,
+    CreatePlaylistItem,
+    InsertChannelSection,
+    LanguageResponse,
+    RegionResponse,
+    ThumbnailSetResponse,
+    UploadVideo,
+    VideoReportAbuse,
+    VideoReportReasonResponse,
+    YouTubeListResponse,
+    YouTubeRequest,
+    YouTubeResponse,
+)
 
 
 class YouTube(BaseModel):
@@ -177,3 +201,259 @@ class YouTube(BaseModel):
             An instance of VideoReportAbuse with all the details needed to report.
         """
         pass
+
+    def update_video(self, upload_req: UploadVideo) -> Video:
+        """Updates a video's metadata."""
+        raise NotImplementedError()
+
+    def delete_video(self, video_id: str) -> None:
+        """Deletes a YouTube video."""
+        raise NotImplementedError()
+
+    def upload_video(self, upload_req: UploadVideo) -> Video:
+        """Upload a YouTube video."""
+        raise NotImplementedError()
+
+    def rate_video(self, video_id: str, rating: str) -> None:
+        """Add a like or dislike rating to a video or remove a rating from a video."""
+        raise NotImplementedError()
+
+    def find_channel_by_id(self, channel_id: str) -> Channel:
+        """Find a youtube channel given its id."""
+        raise NotImplementedError()
+
+    def find_channels_by_ids(self, channel_ids: list[str]) -> list[Channel]:
+        """Find many channels given their ids."""
+        raise NotImplementedError()
+
+    def find_my_channel(self) -> Channel:
+        """Find the details fo your youtube channel."""
+        raise NotImplementedError()
+
+    def find_channel_playlists(
+        self, channel_id: str, max_results: int = 10
+    ) -> YouTubeResponse:
+        """Find the playlists for a given channel."""
+        raise NotImplementedError()
+
+    def find_my_playlists(self) -> YouTubeResponse:
+        """Find the playlists in your channel."""
+        raise NotImplementedError()
+
+    def get_my_playlists_iterator(self, max_results: Optional[int] = 10) -> Iterator:
+        """Get an iterator for iterating through playlists in your channel."""
+        raise NotImplementedError()
+
+    def insert_playlist(self, playlist_schema: CreatePlaylist) -> Playlist:
+        """Create a new playlist in your channel."""
+        raise NotImplementedError()
+
+    def update_playlist(
+        self, playlist_id: str, playlist_schema: CreatePlaylist
+    ) -> Playlist:
+        """Update a playlist in your channel."""
+        raise NotImplementedError()
+
+    def delete_playlist(self, playlist_id: str) -> None:
+        """Delete a playlist in your channel."""
+        raise NotImplementedError()
+
+    def find_playlist_items(
+        self, playlist_id: str, max_results: Optional[int] = 25
+    ) -> YouTubeResponse:
+        """Find a particular video in your playlist."""
+        raise NotImplementedError()
+
+    def find_playlist_items_by_ids(
+        self, playlist_item_ids: list[str]
+    ) -> YouTubeResponse:
+        """Find various playlist videos given their ids."""
+        raise NotImplementedError()
+
+    def insert_playlist_item(self, create_item: CreatePlaylistItem) -> PlaylistItem:
+        """Add a video to a playlist."""
+        raise NotImplementedError()
+
+    def update_playlist_item(
+        self, playlist_id: str, playlist_item_id: str, video_id: str, position: int = 1
+    ) -> PlaylistItem:
+        """Update a given video details in a playlist."""
+        raise NotImplementedError()
+
+    def delete_playlist_item(self, playlist_item_id: str) -> Playlist:
+        """Delete a video from a playlist."""
+        raise NotImplementedError()
+
+    def get_video_categories(
+        self, region_code: Optional[str] = ''
+    ) -> list[VideoCategory]:
+        """List all the video categories on youtube."""
+        raise NotImplementedError()
+
+    def find_video_comments(self, request: YouTubeRequest) -> YouTubeResponse:
+        """Get a particular video's comments."""
+        raise NotImplementedError()
+
+    def get_comments_iterator(self, request_schema: YouTubeResponse) -> Iterator:
+        """Get an iterator for going through a videos comments."""
+        raise NotImplementedError()
+
+    def find_all_channel_comments(self, request: YouTubeRequest) -> YouTubeResponse:
+        """Get a particular channels's comments."""
+        raise NotImplementedError()
+
+    def insert_comment(self, video_id: str, comment: str) -> CommentThread:
+        """Comment on a given video."""
+        raise NotImplementedError()
+
+    def get_comment_replies(self, comment_id: str) -> list[Comment]:
+        """Get the replies for a given comment."""
+        raise NotImplementedError()
+
+    def get_comment(self, comment_id: str) -> Comment:
+        """Get a comments, given its id."""
+        raise NotImplementedError()
+
+    def get_comments(self, comment_ids: list[str]) -> list[Comment]:
+        """Get various comments given their ids."""
+        raise NotImplementedError()
+
+    def reply_to_comment(self, comment_id: str, comment: str) -> Comment:
+        """Reply to the given comment."""
+        raise NotImplementedError()
+
+    def update_comment(self, comment_id: str, comment: str) -> Comment:
+        """Update a comments."""
+        raise NotImplementedError()
+
+    def delete_comment(self, comment_id: str) -> None:
+        """Delete a comment."""
+        raise NotImplementedError()
+
+    def list_channel_activity(self, request: YouTubeRequest) -> YouTubeResponse:
+        """List all the activities of the given channel, such as uploads."""
+        raise NotImplementedError()
+
+    def list_my_activities(self, request: YouTubeRequest) -> YouTubeResponse:
+        """List all the activities for your channel, such as creating a playlist."""
+        raise NotImplementedError()
+
+    def list_video_captions(self, video_id: str) -> Caption:
+        raise NotImplementedError()
+
+    def insert_video_caption(self, video_id: str) -> None:
+        raise NotImplementedError()
+
+    def update_video_caption(self, caption_id: str) -> None:
+        raise NotImplementedError()
+
+    def download_video_caption(self, caption_id: str) -> None:
+        raise NotImplementedError()
+
+    def delete_video_caption(self, caption_id: str) -> None:
+        raise NotImplementedError()
+
+    def upload_channel_banner(self, media_file: str, channel_id: str) -> None:
+        raise NotImplementedError()
+
+    def list_channel_sections(self, channel_id: str) -> YouTubeListResponse:
+        """List a channel's sections."""
+        raise NotImplementedError()
+
+    def list_my_channel_sections(self) -> YouTubeListResponse:
+        """List your channel sections."""
+        raise NotImplementedError()
+
+    def insert_channel_section(self, request: InsertChannelSection) -> ChannelSection:
+        """Insert a new channle section."""
+        raise NotImplementedError()
+
+    def update_channel_section(self, channel_section_id: str) -> None:
+        """Update a channel section."""
+        raise NotImplementedError()
+
+    def delete_channel_section(self, channel_section_id: str) -> None:
+        """Delete a channel section."""
+        raise NotImplementedError()
+
+    def list_languages(self, language: str = 'en_US') -> LanguageResponse:
+        """List all the languages youtube supports."""
+        raise NotImplementedError()
+
+    def list_regions(self, language: str = 'en_US') -> RegionResponse:
+        """List all the regions youtube supports."""
+        raise NotImplementedError()
+
+    def set_watermark(self, channel_id: str) -> None:
+        """Set a video's watermarks."""
+        raise NotImplementedError()
+
+    def unset_watermark(self, channel_id: str) -> None:
+        """Remove a video's watermark."""
+        raise NotImplementedError()
+
+    def list_video_abuse_report_reasons(self) -> VideoReportReasonResponse:
+        """List reasons that can be used to report a video."""
+        raise NotImplementedError()
+
+    def set_video_thumbnail(
+        self, video_id: str, thumbnail: str
+    ) -> ThumbnailSetResponse:
+        """Set a video's thumbnail."""
+        raise NotImplementedError()
+
+    def list_channel_subscriptions(self, request: YouTubeRequest) -> YouTubeResponse:
+        """List the given channel's subscriptions."""
+        raise NotImplementedError()
+
+    def list_my_subscriptions(self, request: YouTubeRequest) -> YouTubeResponse:
+        """List the channels I subscribe to."""
+        raise NotImplementedError()
+
+    def do_i_subscribe(self, channel_id: str) -> bool:
+        """Check if I subscribe to the given channel."""
+        raise NotImplementedError()
+
+    def is_subscribed(self, channel_id: str, user_channel: str) -> bool:
+        """Check if one channel subscribes to another channel.
+
+        Parameters
+        ----------
+        channel_id: str
+            The channel id of the channel to which subscription is being confirmed.
+        user_channel: str
+            The channel id of the channel to check if its subscribed.
+        Returns
+        -------
+        bool:
+            Whether user_channel subscribes to channel_id
+        """
+        raise NotImplementedError()
+
+    def subscribe_to_channel(self, channel_id: str) -> Subscription:
+        """Subscribe to a youtube channel.
+
+        Parameters
+        ----------
+        channel_id: str
+            The id of the channel you want to subscribe to.
+        Returns
+        -------
+        Subscription:
+            An instance of subscription with all the details on the channel subscription.
+        """
+        raise NotImplementedError()
+
+    def unsubscribe_to_channel(self, subscription_id: str) -> None:
+        """Unsubscribe from a youtube channel.
+
+        Parameters
+        ----------
+        subscription_id: str
+            The subscription id. You can get this by listing your subscriptions.
+        """
+        raise NotImplementedError()
+
+    def list_activities(self) -> dict:
+        """List your activities on youtube including subscriptions, likes."""
+        raise NotImplementedError()
