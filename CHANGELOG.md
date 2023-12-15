@@ -1,3 +1,10 @@
+## v0.6.0 (2023-12-15)
+
+### Feat
+
+- adds all the methods.
+- adds the search iterator.
+
 ## v0.5.0 (2023-12-14)
 
 ### Feat
