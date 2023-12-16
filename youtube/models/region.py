@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from .resource import Resource
 
 
-class RegionSnippet(Resource):
+class RegionSnippet(BaseModel):
     gl: str
     name: str
 

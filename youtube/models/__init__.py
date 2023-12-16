@@ -28,11 +28,11 @@ from .channel_section import ChannelSection, ChannelSectionType
 from .comment import Author, Comment
 from .comment_thread import CommentThread
 from .content_details import BaseContentDetails
-from .language import Language
+from .language import Language, LanguageSnippet
 from .localized import Localized
 from .playlist import Playlist
 from .playlist_item import PlaylistItem
-from .region import Region
+from .region import Region, RegionSnippet
 from .resource import Resource
 from .resource_type import ResourceType
 from .scopes import Scopes
@@ -42,6 +42,6 @@ from .status import BaseStatus
 from .subscription import Subscription
 from .thumbnail import Thumbnail, ThumbnailResolution
 from .video import ContentDetails, Statistics, Status, Video
-from .video_abuse_report_reason import VideoAbuseReportReason
+from .video_abuse_report_reason import VideoAbuseReportReason, VideoAbuseReportReasonSnippet
 from .video_category import VideoCategory, VideoCategorySnippet
 from .watermark import WaterMark

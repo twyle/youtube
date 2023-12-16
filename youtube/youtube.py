@@ -21,12 +21,10 @@ from .schemas import (
     CreatePlaylist,
     CreatePlaylistItem,
     InsertChannelSection,
-    LanguageResponse,
-    RegionResponse,
     ThumbnailSetResponse,
     UploadVideo,
     VideoReportAbuse,
-    VideoReportReasonResponse,
+    VideoReportReasonSchema,
     YouTubeListResponse,
     YouTubeRatingResponse,
     YouTubeRequest,
@@ -130,7 +128,7 @@ class YouTube(BaseModel):
         search: YouTubeSearch = YouTubeSearch(youtube_client=self.youtube_client)
         return search.find_channel_by_name(display_name)
 
-    def get_video_ratings(self, video_ids: list[str]) -> YouTubeRatingResponse:
+    def get_video_ratings(self, video_ids: list[str]) -> YouTubeListResponse:
         """Find out whether or not you liked the videos whose ids are provided.
 
         You provide it with a list of video ids and for each video it will tell you whether
@@ -194,9 +192,10 @@ class YouTube(BaseModel):
         list[Video]:
             A list of the most popular videos
         """
-        pass
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.find_most_popular_video_by_region(region_code, category_id)
 
-    def report_video_abuse(self, abuse_report: VideoReportAbuse) -> None:
+    def report_video_abuse(self, abuse_report: VideoReportReasonSchema) -> None:
         """Report a video that you deem as harmful or infringing on copyrights.
 
         Parameters
@@ -204,19 +203,23 @@ class YouTube(BaseModel):
         abuse_report: VideoReportAbuse
             An instance of VideoReportAbuse with all the details needed to report.
         """
-        pass
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.report_video_abuse(abuse_report)
 
-    def update_video(self, upload_req: UploadVideo) -> Video:
+    def update_video(self, update_req: UploadVideo) -> Video:
         """Updates a video's metadata."""
-        raise NotImplementedError()
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.update_video(update_req)
 
     def delete_video(self, video_id: str) -> None:
         """Deletes a YouTube video."""
-        raise NotImplementedError()
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.delete_video(video_id)
 
     def upload_video(self, upload_req: UploadVideo) -> Video:
         """Upload a YouTube video."""
-        raise NotImplementedError()
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.upload_video(upload_req)
 
     def rate_video(self, video_id: str, rating: str) -> None:
         """Add a like or dislike rating to a video or remove a rating from a video."""
@@ -382,13 +385,15 @@ class YouTube(BaseModel):
         """Delete a channel section."""
         raise NotImplementedError()
 
-    def list_languages(self, language: str = 'en_US') -> LanguageResponse:
+    def list_languages(self, language: str = 'en_US') -> YouTubeListResponse:
         """List all the languages youtube supports."""
-        raise NotImplementedError()
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.list_languages(language)
 
-    def list_regions(self, language: str = 'en_US') -> RegionResponse:
+    def list_regions(self, language: str = 'en_US') -> YouTubeListResponse:
         """List all the regions youtube supports."""
-        raise NotImplementedError()
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.list_regions(language)
 
     def set_watermark(self, channel_id: str) -> None:
         """Set a video's watermarks."""
@@ -398,9 +403,10 @@ class YouTube(BaseModel):
         """Remove a video's watermark."""
         raise NotImplementedError()
 
-    def list_video_abuse_report_reasons(self) -> VideoReportReasonResponse:
+    def list_video_abuse_report_reasons(self) -> YouTubeListResponse:
         """List reasons that can be used to report a video."""
-        raise NotImplementedError()
+        video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
+        return video.list_video_abuse_report_reasons()
 
     def set_video_thumbnail(
         self, video_id: str, thumbnail: str

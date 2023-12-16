@@ -43,7 +43,7 @@ from .video import (
     VideoOptionalParameters,
     VideoPart,
 )
-from .video_abuse_report_reason import VideoReportReasonResponse
+from .video_abuse_report_reason import VideoReportReasonSchema
 from .youtube_list_response import YouTubeListResponse
 from .youtube_request import Filter, OptionalParameters, Part, YouTubeRequest
 from .youtube_response import YouTubeResponse
