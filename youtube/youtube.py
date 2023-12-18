@@ -16,7 +16,7 @@ from .models import (
     Video,
     VideoCategory,
 )
-from .resources import YouTubeChannel, YouTubeSearch, YouTubeVideo
+from .resources import YouTubeChannel, YouTubeCommentThread, YouTubeSearch, YouTubeVideo
 from .schemas import (
     CreatePlaylist,
     CreatePlaylistItem,
@@ -72,7 +72,11 @@ class YouTube(BaseModel):
         api_service_name: str = 'youtube'
         api_version: str = 'v3'
         credentials_dir: str = '.youtube'
-        scopes: list[str] = [YouTubeScopes.youtube.value]
+        scopes: list[str] = [
+            YouTubeScopes.youtube.value,
+            YouTubeScopes.youtube_force_ssl.value,
+            YouTubeScopes.youtube_upload.value,
+        ]
         oauth: GoogleOAuth = GoogleOAuth(
             secrets_file=self.client_secret_file,
             scopes=scopes,
@@ -304,15 +308,21 @@ class YouTube(BaseModel):
 
     def find_video_comments(self, request: YouTubeRequest) -> YouTubeResponse:
         """Get a particular video's comments."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.find_video_comments(request)
 
     def get_comments_iterator(self, request_schema: YouTubeResponse) -> Iterator:
         """Get an iterator for going through a videos comments."""
         raise NotImplementedError()
 
-    def find_all_channel_comments(self, request: YouTubeRequest) -> YouTubeResponse:
+    def find_all_channel_comments(self, request: YouTubeRequest) -> YouTubeListResponse:
         """Get a particular channels's comments."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.find_all_channel_comments(request)
 
     def insert_comment(self, video_id: str, comment: str) -> CommentThread:
         """Comment on a given video."""
@@ -320,15 +330,24 @@ class YouTube(BaseModel):
 
     def get_comment_replies(self, comment_id: str) -> list[Comment]:
         """Get the replies for a given comment."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.get_comment_replies(comment_id)
 
-    def get_comment(self, comment_id: str) -> Comment:
+    def get_comment(self, comment_id: str) -> YouTubeListResponse:
         """Get a comments, given its id."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.get_comment(comment_id)
 
-    def get_comments(self, comment_ids: list[str]) -> list[Comment]:
+    def get_comments(self, comment_ids: list[str]) -> YouTubeListResponse:
         """Get various comments given their ids."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.get_comments(comment_ids)
 
     def reply_to_comment(self, comment_id: str, comment: str) -> Comment:
         """Reply to the given comment."""
