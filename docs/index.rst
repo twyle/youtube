@@ -30,13 +30,8 @@ First steps
 :doc:`intro/tutorial`
     Learn how youtube is used in a project by following along.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Python API:
-
-   source/api/youtube
-   source/api/models/video
-   source/api/models/search
+:doc:`intro/python_api`
+    Learn about youtube internals.
 
 Indices and tables
 ==================
