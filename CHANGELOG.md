@@ -1,3 +1,10 @@
+## v0.8.0 (2023-12-18)
+
+### Feat
+
+- adds the comment functionality.
+- adds the channel functionality.
+
 ## v0.7.0 (2023-12-16)
 
 ### Feat
