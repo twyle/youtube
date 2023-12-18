@@ -16,7 +16,7 @@ from .models import (
     Video,
     VideoCategory,
 )
-from .resources import YouTubeSearch, YouTubeVideo
+from .resources import YouTubeChannel, YouTubeSearch, YouTubeVideo
 from .schemas import (
     CreatePlaylist,
     CreatePlaylistItem,
@@ -226,17 +226,20 @@ class YouTube(BaseModel):
         video: YouTubeVideo = YouTubeVideo(youtube_client=self.youtube_client)
         video.rate_video(video_id, rating)
 
-    def find_channel_by_id(self, channel_id: str) -> Channel:
+    def find_channel_by_id(self, channel_id: str) -> YouTubeListResponse:
         """Find a youtube channel given its id."""
-        raise NotImplementedError()
+        channel: YouTubeChannel = YouTubeChannel(youtube_client=self.youtube_client)
+        return channel.find_channel_by_id(channel_id)
 
-    def find_channels_by_ids(self, channel_ids: list[str]) -> list[Channel]:
+    def find_channels_by_ids(self, channel_ids: list[str]) -> YouTubeListResponse:
         """Find many channels given their ids."""
-        raise NotImplementedError()
+        channel: YouTubeChannel = YouTubeChannel(youtube_client=self.youtube_client)
+        return channel.find_channels_by_ids(channel_ids)
 
     def find_my_channel(self) -> Channel:
         """Find the details fo your youtube channel."""
-        raise NotImplementedError()
+        channel: YouTubeChannel = YouTubeChannel(youtube_client=self.youtube_client)
+        return channel.find_my_channel()
 
     def find_channel_playlists(
         self, channel_id: str, max_results: int = 10
