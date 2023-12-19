@@ -326,7 +326,10 @@ class YouTube(BaseModel):
 
     def insert_comment(self, video_id: str, comment: str) -> CommentThread:
         """Comment on a given video."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.insert_comment(video_id, comment)
 
     def get_comment_replies(self, comment_id: str) -> list[Comment]:
         """Get the replies for a given comment."""
@@ -351,15 +354,24 @@ class YouTube(BaseModel):
 
     def reply_to_comment(self, comment_id: str, comment: str) -> Comment:
         """Reply to the given comment."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.reply_to_comment(comment_id, comment)
 
     def update_comment(self, comment_id: str, comment: str) -> Comment:
         """Update a comments."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.update_comment(comment_id, comment)
 
     def delete_comment(self, comment_id: str) -> None:
         """Delete a comment."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.delete_comment(comment_id)
 
     def list_channel_activity(self, request: YouTubeRequest) -> YouTubeResponse:
         """List all the activities of the given channel, such as uploads."""

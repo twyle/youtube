@@ -1,6 +1,6 @@
 from typing import Any
 
-from ...models import CommentThread
+from ...models import Comment, CommentThread
 from ...schemas import (
     CommentThreadFilter,
     CommentThreadOptionalParameters,
@@ -134,3 +134,37 @@ class YouTubeCommentThread(YouTubeResource):
         )
         comment_reply_response = comment_reply_request.execute()
         return comment_reply_response
+
+    # TODO create a custom parser
+    def insert_comment(self, video_id: str, comment: str) -> CommentThread:
+        insert_comment_request = self.youtube_client.commentThreads().insert(
+            part='snippet',
+            body={
+                'snippet': {
+                    'videoId': video_id,
+                    'topLevelComment': {'snippet': {'textOriginal': comment}},
+                }
+            },
+        )
+        insert_comment_response = insert_comment_request.execute()
+        return insert_comment_response
+
+    def reply_to_comment(self, comment_id: str, comment: str) -> Comment:
+        comment_reply_request = self.youtube_client.comments().insert(
+            part='snippet,id',
+            body={'snippet': {'parentId': comment_id, 'textOriginal': comment}},
+        )
+        comment_reply_response = comment_reply_request.execute()
+        return comment_reply_response
+
+    def update_comment(self, comment_id: str, comment: str) -> Comment:
+        update_comment_request = self.youtube_client.comments().update(
+            part='snippet',
+            body={'id': comment_id, 'snippet': {'textOriginal': comment}},
+        )
+        update_comment_response = update_comment_request.execute()
+        return update_comment_response
+
+    def delete_comment(self, comment_id: str) -> None:
+        delete_comment_request = self.youtube_client.comments().delete(id=comment_id)
+        delete_comment_request.execute()
