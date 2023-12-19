@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Iterator
 
 from ...models import Comment, CommentThread
 from ...schemas import (
@@ -7,6 +7,7 @@ from ...schemas import (
     CommentThreadPart,
     YouTubeListResponse,
     YouTubeRequest,
+    YouTubeResponse,
 )
 from ..resource import YouTubeResource
 
@@ -168,3 +169,18 @@ class YouTubeCommentThread(YouTubeResource):
     def delete_comment(self, comment_id: str) -> None:
         delete_comment_request = self.youtube_client.comments().delete(id=comment_id)
         delete_comment_request.execute()
+
+    def __iter__(self):
+        return self
+
+    def __next__(self) -> list[Comment]:
+        self.request_schema.optional_parameters.pageToken = self.next_page_token
+        response: YouTubeResponse = self.find_video_comments(self.request_schema)
+        self.next_page_token = response.nextPageToken
+        if not self.next_page_token:
+            raise StopIteration()
+        return response.items
+
+    def get_comments_iterator(self, request_schema: YouTubeResponse) -> Iterator:
+        self.request_schema = request_schema
+        return self
