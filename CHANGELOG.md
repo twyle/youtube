@@ -1,3 +1,13 @@
+## v0.9.0 (2023-12-19)
+
+### Feat
+
+- adds all the comment functionality.
+
+### Fix
+
+- adds the deplyment workflow.
+
 ## v0.8.0 (2023-12-18)
 
 ### Feat
