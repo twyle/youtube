@@ -316,7 +316,10 @@ class YouTube(BaseModel):
 
     def get_comments_iterator(self, request_schema: YouTubeResponse) -> Iterator:
         """Get an iterator for going through a videos comments."""
-        raise NotImplementedError()
+        comment_thread: YouTubeCommentThread = YouTubeCommentThread(
+            youtube_client=self.youtube_client
+        )
+        return comment_thread.get_comments_iterator(request_schema)
 
     def find_all_channel_comments(self, request: YouTubeRequest) -> YouTubeListResponse:
         """Get a particular channels's comments."""
