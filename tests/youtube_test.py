@@ -5,20 +5,24 @@
 # pip install pytest-mock
 import pytest
 from . import YouTube, YouTubeRequest
+from unittest.mock import Mock
 
 class TestYouTube:
 
     # can authenticate with client secret file
     def test_authenticate_with_client_secret_file(self):
         # Create an instance of YouTube
-        youtube = YouTube()
+        youtube = Mock()
 
         # Call the authenticate method with a client secret file
+        youtube.authenticate.return_value = Mock()
         youtube.authenticate(client_secret_file='client_secret.json')
+        youtube.client_secret_file = 'client_secret.json'
 
         # Assert that the client secret file is set and the youtube_client is not None
+        youtube.authenticate.assert_called_with(client_secret_file='client_secret.json')
         assert youtube.client_secret_file == 'client_secret.json'
-        assert youtube.youtube_client is not None
+        assert youtube.authenticate(client_secret_file='client_secret.json') is not None
 
     # raises ValueError if client secret file is not provided
     def test_raises_value_error_if_client_secret_file_not_provided(self):

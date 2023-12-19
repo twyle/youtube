@@ -35,7 +35,9 @@ jobs:
       run: make lint
 
     - name: Create test requirements
-      run: touch client_secret.json
+      run: |
+        touch client_secret.json
+        echo {} >> client_secret.json
 
     - name: Test with pytest
       run: |
