@@ -3,6 +3,7 @@ commitizen
 flake8
 isort
 pre-commit
+pytest
 recommonmark
 setuptools
 sphinx
