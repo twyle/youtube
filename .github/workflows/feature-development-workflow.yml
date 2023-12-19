@@ -32,6 +32,12 @@ jobs:
     - name: Run the linters
       run: make lint
 
+    - name: Create test requirements
+      run: touch client_secret.json
+
     - name: Test with pytest
       run: |
         if [ -d ./tests ] || [ -d ./test ]; then python -m pytest; fi
+
+    - name: Remove test requirements
+      run: rm -rf client_secret.json
