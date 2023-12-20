@@ -16,17 +16,21 @@ from .models import (
     Video,
     VideoCategory,
 )
-from .resources import YouTubeChannel, YouTubeCommentThread, YouTubeSearch, YouTubeVideo
+from .resources import (
+    YouTubeChannel,
+    YouTubeCommentThread,
+    YouTubePlaylist,
+    YouTubeSearch,
+    YouTubeVideo,
+)
 from .schemas import (
     CreatePlaylist,
     CreatePlaylistItem,
     InsertChannelSection,
     ThumbnailSetResponse,
     UploadVideo,
-    VideoReportAbuse,
     VideoReportReasonSchema,
     YouTubeListResponse,
-    YouTubeRatingResponse,
     YouTubeRequest,
     YouTubeResponse,
 )
@@ -247,32 +251,38 @@ class YouTube(BaseModel):
         return channel.find_my_channel()
 
     def find_channel_playlists(
-        self, channel_id: str, max_results: int = 10
-    ) -> YouTubeResponse:
+        self, channel_id: str, max_results: int = 25
+    ) -> YouTubeListResponse:
         """Find the playlists for a given channel."""
-        raise NotImplementedError()
+        playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
+        return playlist.find_channel_playlists(channel_id, max_results)
 
-    def find_my_playlists(self) -> YouTubeResponse:
+    def find_my_playlists(self) -> YouTubeListResponse:
         """Find the playlists in your channel."""
-        raise NotImplementedError()
+        playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
+        return playlist.find_my_playlists()
 
-    def get_my_playlists_iterator(self, max_results: Optional[int] = 10) -> Iterator:
+    def get_my_playlists_iterator(self, max_results: int = 10) -> Iterator:
         """Get an iterator for iterating through playlists in your channel."""
-        raise NotImplementedError()
+        playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
+        return playlist.get_my_playlists_iterator(max_results)
 
     def insert_playlist(self, playlist_schema: CreatePlaylist) -> Playlist:
         """Create a new playlist in your channel."""
-        raise NotImplementedError()
+        playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
+        return playlist.insert_playlist(playlist_schema)
 
     def update_playlist(
         self, playlist_id: str, playlist_schema: CreatePlaylist
     ) -> Playlist:
         """Update a playlist in your channel."""
-        raise NotImplementedError()
+        playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
+        return playlist.update_playlist(playlist_id, playlist_schema)
 
     def delete_playlist(self, playlist_id: str) -> None:
         """Delete a playlist in your channel."""
-        raise NotImplementedError()
+        playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
+        return playlist.delete_playlist(playlist_id)
 
     def find_playlist_items(
         self, playlist_id: str, max_results: Optional[int] = 25

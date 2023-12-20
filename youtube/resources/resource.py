@@ -146,8 +146,8 @@ class YouTubeResource(ABC):
         return youtube_result
 
     def parse_youtube_response(self, youtube_response: dict) -> YouTubeResponse:
-        youtube_result: YouTubeResponse = self.parse_youtube_list_response(
-            youtube_response
+        youtube_result: YouTubeResponse = YouTubeResponse(
+            **self.parse_youtube_list_response(youtube_response).model_dump()
         )
         youtube_result.nextPageToken = youtube_response.get('nextPageToken', '')
         youtube_result.prevPageToken = youtube_response.get('prevPageToken', '')
