@@ -1,3 +1,14 @@
+## v0.10.0 (2023-12-20)
+
+### Feat
+
+- adds all the playlist item functionality.
+- creates the playlist item initial layout.
+- adds the playlist functionality.
+- adds the playlist resource layout including importation in youtube.
+- adds the video comments iterator. (#1)
+- adds the video comments iterator.
+
 ## v0.9.0 (2023-12-19)
 
 ### Feat
