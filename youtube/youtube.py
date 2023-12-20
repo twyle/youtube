@@ -22,6 +22,7 @@ from .resources import (
     YouTubePlaylist,
     YouTubeSearch,
     YouTubeVideo,
+    YouTubePlaylistItem
 )
 from .schemas import (
     CreatePlaylist,
