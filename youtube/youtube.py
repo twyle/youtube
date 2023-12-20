@@ -20,6 +20,7 @@ from .resources import (
     YouTubeChannel,
     YouTubeCommentThread,
     YouTubePlaylist,
+    YouTubePlaylistItem,
     YouTubeSearch,
     YouTubeVideo,
 )
@@ -288,27 +289,44 @@ class YouTube(BaseModel):
         self, playlist_id: str, max_results: Optional[int] = 25
     ) -> YouTubeResponse:
         """Find a particular video in your playlist."""
-        raise NotImplementedError()
+        playlist_item: YouTubePlaylistItem = YouTubePlaylistItem(
+            youtube_client=self.youtube_client
+        )
+        return playlist_item.find_playlist_items(playlist_id, max_results)
 
     def find_playlist_items_by_ids(
         self, playlist_item_ids: list[str]
-    ) -> YouTubeResponse:
+    ) -> YouTubeListResponse:
         """Find various playlist videos given their ids."""
-        raise NotImplementedError()
+        playlist_item: YouTubePlaylistItem = YouTubePlaylistItem(
+            youtube_client=self.youtube_client
+        )
+        return playlist_item.find_playlist_items_by_ids(playlist_item_ids)
 
     def insert_playlist_item(self, create_item: CreatePlaylistItem) -> PlaylistItem:
         """Add a video to a playlist."""
-        raise NotImplementedError()
+        playlist_item: YouTubePlaylistItem = YouTubePlaylistItem(
+            youtube_client=self.youtube_client
+        )
+        return playlist_item.insert_playlist_item(create_item)
 
     def update_playlist_item(
         self, playlist_id: str, playlist_item_id: str, video_id: str, position: int = 1
     ) -> PlaylistItem:
         """Update a given video details in a playlist."""
-        raise NotImplementedError()
+        playlist_item: YouTubePlaylistItem = YouTubePlaylistItem(
+            youtube_client=self.youtube_client
+        )
+        return playlist_item.update_playlist_item(
+            playlist_id, playlist_item_id, video_id, position
+        )
 
-    def delete_playlist_item(self, playlist_item_id: str) -> Playlist:
+    def delete_playlist_item(self, playlist_item_id: str) -> None:
         """Delete a video from a playlist."""
-        raise NotImplementedError()
+        playlist_item: YouTubePlaylistItem = YouTubePlaylistItem(
+            youtube_client=self.youtube_client
+        )
+        return playlist_item.delete_playlist_item(playlist_item_id)
 
     def get_video_categories(
         self, region_code: Optional[str] = ''
