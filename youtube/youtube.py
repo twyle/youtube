@@ -16,17 +16,17 @@ from .models import (
     Video,
     VideoCategory,
 )
-from .resources import YouTubeChannel, YouTubeCommentThread, YouTubeSearch, YouTubeVideo
+from .resources import (
+    YouTubeChannel, YouTubeCommentThread, YouTubeSearch, YouTubeVideo, YouTubePlaylist
+)
 from .schemas import (
     CreatePlaylist,
     CreatePlaylistItem,
     InsertChannelSection,
     ThumbnailSetResponse,
     UploadVideo,
-    VideoReportAbuse,
     VideoReportReasonSchema,
     YouTubeListResponse,
-    YouTubeRatingResponse,
     YouTubeRequest,
     YouTubeResponse,
 )
