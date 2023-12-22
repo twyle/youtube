@@ -38,6 +38,10 @@ setup(
             'youtube.resources',
             'youtube.resources.search',
             'youtube.resources.video'
+            'youtube.resources.channel',
+            'youtube.resources.playlist',
+            'youtube.resources.playlist_item',
+            'youtube.resources.comment_thread'
         ]
     ),
     version=VERSION,
