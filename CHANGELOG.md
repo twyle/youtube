@@ -1,3 +1,9 @@
+## v0.10.1 (2023-12-22)
+
+### Fix
+
+- adds the packages channel, playlist, playlist_item, comment_thread to setup for the build.
+
 ## v0.10.0 (2023-12-20)
 
 ### Feat
