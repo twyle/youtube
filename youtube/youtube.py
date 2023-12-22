@@ -16,14 +16,12 @@ from .models import (
     Video,
     VideoCategory,
 )
-from .resources import (
-    YouTubeChannel,
-    YouTubeCommentThread,
-    YouTubePlaylist,
-    YouTubePlaylistItem,
-    YouTubeSearch,
-    YouTubeVideo,
-)
+from .resources.channel import YouTubeChannel
+from .resources.comment_thread import YouTubeCommentThread
+from .resources.playlist import YouTubePlaylist
+from .resources.playlist_item import YouTubePlaylistItem
+from .resources.search import YouTubeSearch
+from .resources.video import YouTubeVideo
 from .schemas import (
     CreatePlaylist,
     CreatePlaylistItem,
