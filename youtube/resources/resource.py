@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import TypeVar, Generic, Any
+
+T = TypeVar('T')
 
 from ..models import (
     BaseContentDetails,
@@ -147,8 +149,11 @@ class YouTubeResource(ABC):
 
     def parse_youtube_response(self, youtube_response: dict) -> YouTubeResponse:
         youtube_result: YouTubeResponse = YouTubeResponse(
-            **self.parse_youtube_list_response(youtube_response).model_dump()
+            kind=youtube_response['kind'],
+            etag=youtube_response['etag'],
+            pageInfo=PageInfo(**youtube_response['pageInfo']),
+            items=self.parse_items(youtube_response['items']),
+            nextPageToken=youtube_response.get('nextPageToken', ''),
+            prevPageToken=youtube_response.get('prevPageToken', '')
         )
-        youtube_result.nextPageToken = youtube_response.get('nextPageToken', '')
-        youtube_result.prevPageToken = youtube_response.get('prevPageToken', '')
         return youtube_result
