@@ -37,11 +37,11 @@ setup(
             'youtube.schemas',
             'youtube.resources',
             'youtube.resources.search',
-            'youtube.resources.video'
-            'youtube.resources.channel',
+            'youtube.resources.video',
             'youtube.resources.playlist',
             'youtube.resources.playlist_item',
-            'youtube.resources.comment_thread'
+            'youtube.resources.comment_thread',
+            'youtube.resources.channel',
         ]
     ),
     version=VERSION,
