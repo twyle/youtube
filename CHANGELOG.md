@@ -1,3 +1,9 @@
+## v0.10.3 (2023-12-22)
+
+### Fix
+
+- removes the imports from the resources __init__ file.
+
 ## v0.10.2 (2023-12-22)
 
 ### Fix
