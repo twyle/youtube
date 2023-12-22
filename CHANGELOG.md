@@ -1,3 +1,10 @@
+## v0.10.4 (2023-12-22)
+
+### Fix
+
+- adds the channel package to the bottom of the packages in the setup file.
+- adds the resources import in the resource package.
+
 ## v0.10.3 (2023-12-22)
 
 ### Fix
