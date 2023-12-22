@@ -1,3 +1,9 @@
+## v0.10.5 (2023-12-22)
+
+### Refactor
+
+- reqrites the parse_youtube_response method to parse the youtube response.
+
 ## v0.10.4 (2023-12-22)
 
 ### Fix
