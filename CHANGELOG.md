@@ -1,3 +1,9 @@
+## v0.10.2 (2023-12-22)
+
+### Fix
+
+- directly imports the resources from their packages in the resource folder.
+
 ## v0.10.1 (2023-12-22)
 
 ### Fix
