@@ -81,13 +81,13 @@ class YouTubeCommentThread(YouTubeResource):
         )
         return youtube_result
 
-    def find_video_comments(self, request: YouTubeRequest) -> YouTubeListResponse:
+    def find_video_comments(self, request: YouTubeRequest) -> YouTubeResponse:
         """Get a particular video's comments."""
         comment_thread_req = self.youtube_client.commentThreads().list(
             **self.create_request_dict(request)
         )
         comment_thread_resp = comment_thread_req.execute()
-        return self.parse_youtube_list_response(comment_thread_resp)
+        return self.parse_youtube_response(comment_thread_resp)
 
     def find_all_channel_comments(self, request: YouTubeRequest) -> YouTubeListResponse:
         """Get a particular channels's comments."""

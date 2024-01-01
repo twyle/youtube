@@ -1,3 +1,9 @@
+## v0.10.6 (2024-01-01)
+
+### Fix
+
+- made the find_video_comments method return a YouTubeResponse object.
+
 ## v0.10.5 (2023-12-22)
 
 ### Refactor
