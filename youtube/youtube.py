@@ -328,7 +328,7 @@ class YouTube(BaseModel):
 
     def get_video_categories(
         self, region_code: Optional[str] = ''
-    ) -> list[VideoCategory]:
+    ) -> YouTubeListResponse:
         """List all the video categories on youtube."""
         youtube_video = YouTubeVideo(youtube_client=self.youtube_client)
         return youtube_video.get_video_categories(region_code=region_code)
