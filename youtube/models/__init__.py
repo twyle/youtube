@@ -25,7 +25,7 @@ from .channel import (
 )
 from .channel_banner import ChannelBanner
 from .channel_section import ChannelSection, ChannelSectionType
-from .comment import Author, Comment
+from .comment import Author, Comment, CommentSnippet
 from .comment_thread import CommentThread
 from .content_details import BaseContentDetails
 from .language import Language, LanguageSnippet

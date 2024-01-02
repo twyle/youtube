@@ -3,6 +3,8 @@ from typing import Optional
 
 from pydantic import BaseModel
 
+from .resource import Resource
+
 
 class Author(BaseModel):
     display_name: str
@@ -11,10 +13,9 @@ class Author(BaseModel):
     channel_id: Optional[str] = ''
 
 
-class Snippet(BaseModel):
+class CommentSnippet(BaseModel):
     author: Author
     channel_id: str
-    video_id: str
     text_display: str
     text_original: str
     can_rate: bool
@@ -23,9 +24,10 @@ class Snippet(BaseModel):
     # moderation_status: str
     published_at: datetime
     updated_at: datetime
+    video_id: Optional[str] = None
     parent_id: Optional[str] = None
 
 
-class Comment(BaseModel):
+class Comment(Resource):
     id: str
-    snippet: Snippet
+    snippet: CommentSnippet

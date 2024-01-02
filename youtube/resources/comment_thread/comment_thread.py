@@ -10,11 +10,13 @@ from ...schemas import (
     YouTubeResponse,
 )
 from ..resource import YouTubeResource
+from .comment import CommentResource
 
 
 class YouTubeCommentThread(YouTubeResource):
     def __init__(self, youtube_client: Any) -> None:
         super().__init__(youtube_client)
+        self.comment_resource: CommentResource = CommentResource(self.youtube_client)
         self.request_schema: YouTubeRequest = None
         self.next_page_token: str = None
 
@@ -53,13 +55,13 @@ class YouTubeCommentThread(YouTubeResource):
         comment['id'] = top_level_comment['id']
         return comment
 
-    def parse_snippets(self, snippet_data: dict[str, Any]) -> dict[str, Any]:
+    def parse_snippet(self, snippet_data: dict[str, Any]) -> dict[str, Any]:
         parsed_snippet: dict[str, Any] = dict()
         parsed_snippet['channel_id'] = snippet_data['channelId']
         parsed_snippet['video_id'] = snippet_data.get('videoId', '')
         parsed_snippet['can_reply'] = snippet_data.get('canReply', True)
         parsed_snippet['is_public'] = snippet_data.get('isPublic', True)
-        parsed_snippet['total_reply_count'] = snippet_data['totalReplyCount']
+        parsed_snippet['total_reply_count'] = snippet_data.get('totalReplyCount', 0)
         parsed_snippet['top_level_comment'] = self.parse_toplevel_comment(
             snippet_data['topLevelComment']
         )
@@ -67,7 +69,7 @@ class YouTubeCommentThread(YouTubeResource):
 
     def parse_item(self, item: dict) -> CommentThread:
         id_data: dict = self.parse_id(item)
-        snippet_data: dict = self.parse_snippets(item['snippet'])
+        snippet_data: dict = self.parse_snippet(item['snippet'])
         id_data.update(snippet_data)
         return CommentThread(**id_data, replies=[])
 
@@ -89,14 +91,14 @@ class YouTubeCommentThread(YouTubeResource):
         comment_thread_resp = comment_thread_req.execute()
         return self.parse_youtube_response(comment_thread_resp)
 
-    def find_all_channel_comments(self, request: YouTubeRequest) -> YouTubeListResponse:
+    def find_all_channel_comments(self, request: YouTubeRequest) -> YouTubeResponse:
         """Get a particular channels's comments."""
         request_dict: dict = self.create_request_dict(request)
         find_channel_comments: dict = self.youtube_client.commentThreads().list(
             **request_dict
         )
         find_channel_comments_resp: dict = find_channel_comments.execute()
-        return self.parse_youtube_list_response(find_channel_comments_resp)
+        return self.parse_youtube_response(find_channel_comments_resp)
 
     # TODO create a custom parser
     def get_comment(self, comment_id: str) -> YouTubeListResponse:
@@ -111,7 +113,7 @@ class YouTubeCommentThread(YouTubeResource):
         request_dict = self.create_request_dict(youtube_request)
         find_comment_request: dict = self.youtube_client.comments().list(**request_dict)
         find_comment_result: dict = find_comment_request.execute()
-        return find_comment_result
+        return self.comment_resource.parse_youtube_list_response(find_comment_result)
 
     # TODO create a custom parser
     def get_comments(self, comment_ids: list[str]) -> YouTubeListResponse:
@@ -126,15 +128,15 @@ class YouTubeCommentThread(YouTubeResource):
         request_dict = self.create_request_dict(youtube_request)
         find_comment_request: dict = self.youtube_client.comments().list(**request_dict)
         find_comment_result: dict = find_comment_request.execute()
-        return find_comment_result
+        return self.comment_resource.parse_youtube_list_response(find_comment_result)
 
     # TODO create a custom parser
-    def get_comment_replies(self, comment_id: str) -> YouTubeListResponse:
+    def get_comment_replies(self, comment_id: str) -> YouTubeResponse:
         comment_reply_request = self.youtube_client.comments().list(
             part='snippet,id', parentId=comment_id
         )
         comment_reply_response = comment_reply_request.execute()
-        return comment_reply_response
+        return self.comment_resource.parse_youtube_response(comment_reply_response)
 
     # TODO create a custom parser
     def insert_comment(self, video_id: str, comment: str) -> CommentThread:
@@ -148,7 +150,7 @@ class YouTubeCommentThread(YouTubeResource):
             },
         )
         insert_comment_response = insert_comment_request.execute()
-        return insert_comment_response
+        return self.parse_item(insert_comment_response)
 
     def reply_to_comment(self, comment_id: str, comment: str) -> Comment:
         comment_reply_request = self.youtube_client.comments().insert(
@@ -156,7 +158,7 @@ class YouTubeCommentThread(YouTubeResource):
             body={'snippet': {'parentId': comment_id, 'textOriginal': comment}},
         )
         comment_reply_response = comment_reply_request.execute()
-        return comment_reply_response
+        return self.comment_resource.parse_item(comment_reply_response)
 
     def update_comment(self, comment_id: str, comment: str) -> Comment:
         update_comment_request = self.youtube_client.comments().update(
@@ -164,7 +166,7 @@ class YouTubeCommentThread(YouTubeResource):
             body={'id': comment_id, 'snippet': {'textOriginal': comment}},
         )
         update_comment_response = update_comment_request.execute()
-        return update_comment_response
+        return self.parse_item(update_comment_response)
 
     def delete_comment(self, comment_id: str) -> None:
         delete_comment_request = self.youtube_client.comments().delete(id=comment_id)

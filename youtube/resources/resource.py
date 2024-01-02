@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import TypeVar, Generic, Any
+from typing import Any, Generic, TypeVar
 
 T = TypeVar('T')
 
@@ -136,13 +136,13 @@ class YouTubeResource(ABC):
         parsed_items: list[Resource] = [self.parse_item(item) for item in items]
         return parsed_items
 
+    # Removed pageInfo=PageInfo(**youtube_list_response['pageInfo']),
     def parse_youtube_list_response(
         self, youtube_list_response: dict
     ) -> YouTubeListResponse:
         youtube_result: YouTubeListResponse = YouTubeListResponse(
             kind=youtube_list_response['kind'],
             etag=youtube_list_response['etag'],
-            pageInfo=PageInfo(**youtube_list_response['pageInfo']),
             items=self.parse_items(youtube_list_response['items']),
         )
         return youtube_result
@@ -154,6 +154,6 @@ class YouTubeResource(ABC):
             pageInfo=PageInfo(**youtube_response['pageInfo']),
             items=self.parse_items(youtube_response['items']),
             nextPageToken=youtube_response.get('nextPageToken', ''),
-            prevPageToken=youtube_response.get('prevPageToken', '')
+            prevPageToken=youtube_response.get('prevPageToken', ''),
         )
         return youtube_result
