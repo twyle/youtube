@@ -1,0 +1,317 @@
+{
+    "kind": "youtube#commentListResponse",
+    "etag": "sfbYuLVl5KlvhWHEewOIqa17WdQ",
+    "pageInfo": {
+        "resultsPerPage": 20
+    },
+    "items": [
+        {
+            "kind": "youtube#comment",
+            "etag": "QqXR36CqY_p_cY09i2TU_3P7P0o",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9xv1bW13RfY",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "\u0644\u064a\u0647 \u0645\u0641\u064a\u0634 \u062a\u0631\u062c\u0645\u0647 \u0639\u0631\u0628\u064a",
+                "textOriginal": "\u0644\u064a\u0647 \u0645\u0641\u064a\u0634 \u062a\u0631\u062c\u0645\u0647 \u0639\u0631\u0628\u064a",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@RoohHora",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/wensAsWlpX5fn6J2GNF1ZRaSjBqumjMcyq2ecjvTmn9ew5mJTWzi0Zg9Mjrog-15vDwXtW_lkw=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCsFSmDNcNjJdyXb3Lh6Ybpg",
+                "authorChannelId": {
+                    "value": "UCsFSmDNcNjJdyXb3Lh6Ybpg"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-04T21:11:33Z",
+                "updatedAt": "2023-12-04T21:11:33Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "6KxFJ8j1wVNvk_vk8pMdJiIpBec",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9xvm_EcjVkA",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "Thank you so much for the course, you help alot of devs out there.",
+                "textOriginal": "Thank you so much for the course, you help alot of devs out there.",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@AungBaw",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/Fqi9okOQKuAii6GGYomKPgfq2h9wMQCKkoIgeF4xZbE2oaEaIS-MzeE2HW3_aJTnrc-vyJJf2L4=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCTepUseOHUsSarWVjoPJYcA",
+                "authorChannelId": {
+                    "value": "UCTepUseOHUsSarWVjoPJYcA"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 2,
+                "publishedAt": "2023-12-05T04:10:40Z",
+                "updatedAt": "2023-12-05T04:10:40Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "flnvdedVUYFn3YwnrehAmVZICZ0",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9xwE8_Rl3kw",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "You are here to cheat people! I did see your machine learning video and joined your course only to find out that you won&#39;t do what you said.<br><br>You might even delete my comments here but people will find the truth.",
+                "textOriginal": "You are here to cheat people! I did see your machine learning video and joined your course only to find out that you won't do what you said.\n\nYou might even delete my comments here but people will find the truth.",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@sakthi130",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AIf8zZRTTJW5f_PjKc-Pqoq5j0WcIPKOjSbdo4TAk4apnQ=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCgHFyInP2NpWXa7XR4fi7Bg",
+                "authorChannelId": {
+                    "value": "UCgHFyInP2NpWXa7XR4fi7Bg"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-05T08:20:17Z",
+                "updatedAt": "2023-12-05T08:20:17Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "CZJrv7o1GX_VVSvjilQ3YOy0BGg",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9xwzQ82Bv3b",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "Ayush, thanks for this course. Where do I find the extra reading material you mentioned at the end of the readme file?",
+                "textOriginal": "Ayush, thanks for this course. Where do I find the extra reading material you mentioned at the end of the readme file?",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@johntube7554",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AIf8zZRLsQsPp5tAapPl_eelwZDF1Ix3pY_YwO_NIw=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCnt1-qWoqSHyfL_CeMTuQsw",
+                "authorChannelId": {
+                    "value": "UCnt1-qWoqSHyfL_CeMTuQsw"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 3,
+                "publishedAt": "2023-12-05T15:22:07Z",
+                "updatedAt": "2023-12-05T15:22:07Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "j2-XDJuoKub2jjo2CJGq619UJOg",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9xx1GCR7FAh",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "Thanks again for sharing your MLOPs insights with the global developer community. This course is going to help a LOT of devs.",
+                "textOriginal": "Thanks again for sharing your MLOPs insights with the global developer community. This course is going to help a LOT of devs.",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@quincylarsonmusic",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AIf8zZTz7l8UBtell-KD81rUZZDERAP74MklRP4XgJny_Q=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCZaUf-avbMsmMYtCzUZZKbQ",
+                "authorChannelId": {
+                    "value": "UCZaUf-avbMsmMYtCzUZZKbQ"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 5,
+                "publishedAt": "2023-12-05T15:46:59Z",
+                "updatedAt": "2023-12-05T15:46:59Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "y_4sZq_QFVvOvByNPHEU1S2N5Os",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9xzQ9y3tqMz",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "Hello I&#39;m also ayush I do app development and python tutorials on YouTube",
+                "textOriginal": "Hello I'm also ayush I do app development and python tutorials on YouTube",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@ayushmuley1907",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/gDCWqkBZakk7dSEmC_hsaAJ8T1dnM1H7waGlzLF9GbBA79TECAQ6zmECRSWzdTZmsFB1nNKKSg=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UC7UPi6fSzKiKRrQ1dYJnWUA",
+                "authorChannelId": {
+                    "value": "UC7UPi6fSzKiKRrQ1dYJnWUA"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-06T14:03:03Z",
+                "updatedAt": "2023-12-06T14:03:03Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "Bj0oqYfbClzb2wipdX_n4c37bUo",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9y2Tm40ovG1",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "I really appreciate this Ayush I reached out to you on LinkedIn to ask a few questions about related topic",
+                "textOriginal": "I really appreciate this Ayush I reached out to you on LinkedIn to ask a few questions about related topic",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@isaacjimenez463",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AIf8zZSyXnjiWvdZfH1s4m9UZMizrXFECiHNux66QQ=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCbPkLB5WOW9Vdi7__h_K_6w",
+                "authorChannelId": {
+                    "value": "UCbPkLB5WOW9Vdi7__h_K_6w"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-08T03:51:35Z",
+                "updatedAt": "2023-12-08T03:51:35Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "STAEiZTf0_fku0YcRbYf7wJwyLw",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9y3bKp3YA8l",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "Can u tell how to start for devops??",
+                "textOriginal": "Can u tell how to start for devops??",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@varunallagh7462",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AIf8zZQYkx9yo_h6Wrf4DmO9mhvcp1Mb-6Wz_50=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCcQ842pFfAr7fr4sMmq-iHw",
+                "authorChannelId": {
+                    "value": "UCcQ842pFfAr7fr4sMmq-iHw"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-08T14:25:36Z",
+                "updatedAt": "2023-12-08T14:25:36Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "gY9zq3yaxOtZn7XQbLGYDySTFBs",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9y4CkaE_Lxo",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "@@johntube7554 where do i find the notebook to even access zml",
+                "textOriginal": "@@johntube7554 where do i find the notebook to even access zml",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@isaacjimenez463",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AIf8zZSyXnjiWvdZfH1s4m9UZMizrXFECiHNux66QQ=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCbPkLB5WOW9Vdi7__h_K_6w",
+                "authorChannelId": {
+                    "value": "UCbPkLB5WOW9Vdi7__h_K_6w"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-08T20:01:18Z",
+                "updatedAt": "2023-12-08T20:01:18Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "tB550f14taF0fyshSrBpObQh_xA",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9y80tQB0Il0",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "thank you :)",
+                "textOriginal": "thank you :)",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@MrKB_SSJ2",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/uqU6OEPFEzrOING3yiAFDxeZbik1WFa1J7rfKIVTrL-H7S1k3EwVdx7RABcdhYnkjrj5dQ1rxg=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCXOf4m-wGarL85uCRzTIVvg",
+                "authorChannelId": {
+                    "value": "UCXOf4m-wGarL85uCRzTIVvg"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-10T07:34:37Z",
+                "updatedAt": "2023-12-10T07:34:37Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "jbZTEkvu-JAOeH86-QKg-b5LMRg",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9y_XaiGX3Oo",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "License is mising from Public Repo. Can you please for using",
+                "textOriginal": "License is mising from Public Repo. Can you please for using",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@VivekParekh0910",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AIf8zZRRm2F-YZDRuXVfZ-T-0wkjMPXMMpVzoGO_E9oVXie8WBiDw-CwOjzEJ7oXB0tl=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCn_MRZrqkqyTt_t6nrgKmXw",
+                "authorChannelId": {
+                    "value": "UCn_MRZrqkqyTt_t6nrgKmXw"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-21T09:19:09Z",
+                "updatedAt": "2023-12-21T09:19:09Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "VITd6LtCx2t2rSGfm3PcOuXQurw",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9yjBS5YttTQ",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "It is a really helpfull for beginner \ud83d\ude0d",
+                "textOriginal": "It is a really helpfull for beginner \ud83d\ude0d",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@wok_ken",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AIf8zZQCpZhz-7D27z2JoOYV3IHOT34yO0cad6HenL0UouUWvMegpwa31_DEtt7LZvK7=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCrbZNB6hg8ITe9JouWR4rMA",
+                "authorChannelId": {
+                    "value": "UCrbZNB6hg8ITe9JouWR4rMA"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-25T03:18:00Z",
+                "updatedAt": "2023-12-25T03:18:00Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "WceNhwdkO-EpSTrVBDbUO4e9-3g",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9ykDY2Rrhr_",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "Kindly try to explain concepts in more details, explaining the syntax doesn&#39;t cover the logics behind the concepts.",
+                "textOriginal": "Kindly try to explain concepts in more details, explaining the syntax doesn't cover the logics behind the concepts.",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@allok501",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AIf8zZSqmRLS1x81rwwGeaYOwORLrTbwsGQAY_XW_kMcWw=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCWO9ocQJDBQewrWtmiCawLw",
+                "authorChannelId": {
+                    "value": "UCWO9ocQJDBQewrWtmiCawLw"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2023-12-25T12:55:32Z",
+                "updatedAt": "2023-12-25T12:55:32Z"
+            }
+        },
+        {
+            "kind": "youtube#comment",
+            "etag": "bU03NLBcpVQJeXD-vHTwnnbfKrs",
+            "id": "UgxwXLTWugMg7IEoKgR4AaABAg.9xuYXOhD_QX9z0F9UFe69m",
+            "snippet": {
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "textDisplay": "Thank you Ayush\ud83d\ude04",
+                "textOriginal": "Thank you Ayush\ud83d\ude04",
+                "parentId": "UgxwXLTWugMg7IEoKgR4AaABAg",
+                "authorDisplayName": "@aimanhaziqmy",
+                "authorProfileImageUrl": "https://yt3.ggpht.com/v_QX6Ly5kMG1W-YH0MES7zDYgsPxTwpFASYqmehSHb_Dqb5PSWLS_kxZdvrWMXDSKi8MuTA_QqI=s48-c-k-c0x00ffffff-no-rj",
+                "authorChannelUrl": "http://www.youtube.com/channel/UCBpljg4_NRDincK-OONfesA",
+                "authorChannelId": {
+                    "value": "UCBpljg4_NRDincK-OONfesA"
+                },
+                "canRate": true,
+                "viewerRating": "none",
+                "likeCount": 0,
+                "publishedAt": "2024-01-01T03:36:45Z",
+                "updatedAt": "2024-01-01T03:36:45Z"
+            }
+        }
+    ]
+}

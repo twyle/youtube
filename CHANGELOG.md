@@ -1,3 +1,9 @@
+## v0.11.0 (2024-01-02)
+
+### Feat
+
+- adds the comment reply parsing functionLITY.
+
 ## v0.10.6 (2024-01-01)
 
 ### Fix
