@@ -100,5 +100,4 @@ class YouTubeChannel(YouTubeResource):
         request_dict = self.create_request_dict(youtube_request)
         find_channel_request: dict = self.youtube_client.channels().list(**request_dict)
         find_channel_result: dict[str, int | str] = find_channel_request.execute()
-        return find_channel_result
         return self.parse_youtube_list_response(find_channel_result)
