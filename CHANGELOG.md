@@ -1,3 +1,9 @@
+## v0.11.1 (2024-01-06)
+
+### Fix
+
+- parses the channel response.
+
 ## v0.11.0 (2024-01-02)
 
 ### Feat
