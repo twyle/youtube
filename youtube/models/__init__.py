@@ -39,7 +39,12 @@ from .scopes import Scopes
 from .search import Search
 from .snippet import BaseSnippet
 from .status import BaseStatus
-from .subscription import Subscription
+from .subscription import (
+    SubscriberSnippet,
+    Subscription,
+    SubscriptionContentDetails,
+    SubscriptionSnippet,
+)
 from .thumbnail import Thumbnail, ThumbnailResolution
 from .video import ContentDetails, Statistics, Status, Video
 from .video_abuse_report_reason import VideoAbuseReportReason, VideoAbuseReportReasonSnippet

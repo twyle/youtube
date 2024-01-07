@@ -6,7 +6,6 @@ from pydantic import BaseModel
 
 from .models import (
     Caption,
-    Channel,
     ChannelSection,
     Comment,
     CommentThread,
@@ -14,14 +13,15 @@ from .models import (
     PlaylistItem,
     Subscription,
     Video,
-    VideoCategory,
 )
 from .resources.channel import YouTubeChannel
 from .resources.comment_thread import YouTubeCommentThread
 from .resources.playlist import YouTubePlaylist
 from .resources.playlist_item import YouTubePlaylistItem
 from .resources.search import YouTubeSearch
+from .resources.subscription import YouTubeSubscription
 from .resources.video import YouTubeVideo
+from .resources.activity import YouTubeActivity
 from .schemas import (
     CreatePlaylist,
     CreatePlaylistItem,
@@ -403,13 +403,15 @@ class YouTube(BaseModel):
         )
         return comment_thread.delete_comment(comment_id)
 
-    def list_channel_activity(self, request: YouTubeRequest) -> YouTubeResponse:
+    def list_channel_activities(self, request: YouTubeRequest) -> YouTubeResponse:
         """List all the activities of the given channel, such as uploads."""
-        raise NotImplementedError()
+        activity: YouTubeActivity = YouTubeActivity(youtube_client=self.youtube_client)
+        return activity.list_channel_activity(request)
 
-    def list_my_activities(self, request: YouTubeRequest) -> YouTubeResponse:
+    def list_my_activities(self) -> YouTubeListResponse:
         """List all the activities for your channel, such as creating a playlist."""
-        raise NotImplementedError()
+        activity: YouTubeActivity = YouTubeActivity(youtube_client=self.youtube_client)
+        return activity.list_my_activities()
 
     def list_video_captions(self, video_id: str) -> Caption:
         raise NotImplementedError()
@@ -480,15 +482,24 @@ class YouTube(BaseModel):
 
     def list_channel_subscriptions(self, request: YouTubeRequest) -> YouTubeResponse:
         """List the given channel's subscriptions."""
-        raise NotImplementedError()
+        subscription: YouTubeSubscription = YouTubeSubscription(
+            youtube_client=self.youtube_client
+        )
+        return subscription.list_channel_subscriptions(request)
 
-    def list_my_subscriptions(self, request: YouTubeRequest) -> YouTubeResponse:
+    def list_my_subscriptions(self) -> YouTubeResponse:
         """List the channels I subscribe to."""
-        raise NotImplementedError()
+        subscription: YouTubeSubscription = YouTubeSubscription(
+            youtube_client=self.youtube_client
+        )
+        return subscription.list_my_subscriptions()
 
     def do_i_subscribe(self, channel_id: str) -> bool:
         """Check if I subscribe to the given channel."""
-        raise NotImplementedError()
+        subscription: YouTubeSubscription = YouTubeSubscription(
+            youtube_client=self.youtube_client
+        )
+        return subscription.do_i_subscribe(channel_id)
 
     def is_subscribed(self, channel_id: str, user_channel: str) -> bool:
         """Check if one channel subscribes to another channel.
@@ -504,7 +515,12 @@ class YouTube(BaseModel):
         bool:
             Whether user_channel subscribes to channel_id
         """
-        raise NotImplementedError()
+        subscription: YouTubeSubscription = YouTubeSubscription(
+            youtube_client=self.youtube_client
+        )
+        return subscription.is_subscribed(
+            channel_id=channel_id, user_channel=user_channel
+        )
 
     def subscribe_to_channel(self, channel_id: str) -> Subscription:
         """Subscribe to a youtube channel.
@@ -518,9 +534,12 @@ class YouTube(BaseModel):
         Subscription:
             An instance of subscription with all the details on the channel subscription.
         """
-        raise NotImplementedError()
+        subscription: YouTubeSubscription = YouTubeSubscription(
+            youtube_client=self.youtube_client
+        )
+        return subscription.subscribe_to_channel(channel_id=channel_id)
 
-    def unsubscribe_to_channel(self, subscription_id: str) -> None:
+    def unsubscribe_from_channel(self, subscription_id: str) -> None:
         """Unsubscribe from a youtube channel.
 
         Parameters
@@ -528,7 +547,10 @@ class YouTube(BaseModel):
         subscription_id: str
             The subscription id. You can get this by listing your subscriptions.
         """
-        raise NotImplementedError()
+        subscription: YouTubeSubscription = YouTubeSubscription(
+            youtube_client=self.youtube_client
+        )
+        return subscription.unsubscribe_from_channel(subscription_id)
 
     def list_activities(self) -> dict:
         """List your activities on youtube including subscriptions, likes."""

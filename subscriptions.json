@@ -1,0 +1,246 @@
+{
+    "kind": "youtube#SubscriptionListResponse",
+    "etag": "YiA9ezAo_rKCEI567yHc2spCXho",
+    "nextPageToken": "CAUQAA",
+    "pageInfo": {
+        "totalResults": 986,
+        "resultsPerPage": 5
+    },
+    "items": [
+        {
+            "kind": "youtube#subscription",
+            "etag": "_c4BZE2sxuNCdkgD_PwJ1J0kCMk",
+            "id": "7eS6H9nd7liYCHzev9m6Rccjj8NrK6kuqpZuQWic6x0",
+            "snippet": {
+                "publishedAt": "2023-05-06T13:43:16.696308Z",
+                "title": "Recap & Chill",
+                "description": "Recap & Chill is a YouTube channel created by Josh Floyd that brings you all of the latest film and television news, recaps, and reviews! Subscribe to stay up to date on all of your favorite content, and let us know in the video comments what film or television series you want to see covered in the future!\n\nCome say hi on Twitter/Instagram @JoshDFloyd or email recapandchillmedia@gmail.com\n\nFor brand partnerships and/or business inquiries, please contact eric@smallscreenmarketing.com",
+                "resourceId": {
+                    "kind": "youtube#channel",
+                    "channelId": "UCnFL_hmp-nc-l2QlLzxZdhg"
+                },
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/kuO87eXIb8nSLUF2Cb3-85kTHvHnRZbPVsdB2rnjYiH2WZd2t4FpzvhFDALPD7TkU9xXRgcD=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/kuO87eXIb8nSLUF2Cb3-85kTHvHnRZbPVsdB2rnjYiH2WZd2t4FpzvhFDALPD7TkU9xXRgcD=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/kuO87eXIb8nSLUF2Cb3-85kTHvHnRZbPVsdB2rnjYiH2WZd2t4FpzvhFDALPD7TkU9xXRgcD=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            },
+            "contentDetails": {
+                "totalItemCount": 201,
+                "newItemCount": 0,
+                "activityType": "all"
+            },
+            "subscriberSnippet": {
+                "title": "Lyle Okoth",
+                "description": "My channel's decription.",
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            }
+        },
+        {
+            "kind": "youtube#subscription",
+            "etag": "jkcZOa-v_PyFHfJ614YC1U9yWlk",
+            "id": "7eS6H9nd7liYCHzev9m6RdPKHVJISuSSBGlLGdRru84",
+            "snippet": {
+                "publishedAt": "2023-12-28T21:10:11.419036Z",
+                "title": "Cinematica",
+                "description": "Subscribe for more Movie/TV Facts: https://www.youtube.com/channel/UCTyHgU6ddX9eXLeSr6KUoSQ?sub_confirmation=1\n\nCinematica is your new home for all things Movie & TV! From Doctor Who to Harry Potter, we'll be going through all your favorites and favorites you didn't know you even had! So grab your snacks and time to binge on Cinematica!\n\nLike the videos we make? Get in touch: eschulteis@frederator.com",
+                "resourceId": {
+                    "kind": "youtube#channel",
+                    "channelId": "UCTyHgU6ddX9eXLeSr6KUoSQ"
+                },
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTaat9tHH9fg9YdPKlYFNtOvyd44UyQBwarM1ehng=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTaat9tHH9fg9YdPKlYFNtOvyd44UyQBwarM1ehng=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTaat9tHH9fg9YdPKlYFNtOvyd44UyQBwarM1ehng=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            },
+            "contentDetails": {
+                "totalItemCount": 345,
+                "newItemCount": 0,
+                "activityType": "all"
+            },
+            "subscriberSnippet": {
+                "title": "Lyle Okoth",
+                "description": "My channel's decription.",
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            }
+        },
+        {
+            "kind": "youtube#subscription",
+            "etag": "gJOwprRhba8ef92SJoyLiz4iBqI",
+            "id": "7eS6H9nd7lgpFf7dGuYLYNilfFLZCmlpjGjuKQ_xNBk",
+            "snippet": {
+                "publishedAt": "2023-03-05T01:32:36.358897Z",
+                "title": "The People Profiles",
+                "description": "All human history essentially comes down to biography. Every event, battle, revolution, massacre and crime, although they may involve thousands or even millions of people, are shaped by the decisions and experiences of individual human beings. Therefore, if we are to understand history, the only way is to understand the lives of the people who made it.\n\nEstablished in 2018, The People Profiles are pioneers of long form independent documentaries on YouTube. With highly detailed, politically neutral, meticulously researched scripts, all written by certified and qualified historians, our documentaries are made by award winning professionals with years of experience in both video production and film. The team at the People Profiles prides itself on being the gold standard for attention to detail, accuracy, quality, as well as unbiased, fair and factual accounts of the lives of the most famous and infamous people in history.\n\nFor non sponsorship enquires peopleprofilessales@hotmail.com",
+                "resourceId": {
+                    "kind": "youtube#channel",
+                    "channelId": "UCD6TPU-PvTMvqgzC_AM7_uA"
+                },
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/NeJx3g5T0A1-nMjPuwfoQWoCbSWvaXl0RU2j4Rfomh3yUxhaFYAicPMHDtYuMTIHF8Qz3tkZtQ=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/NeJx3g5T0A1-nMjPuwfoQWoCbSWvaXl0RU2j4Rfomh3yUxhaFYAicPMHDtYuMTIHF8Qz3tkZtQ=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/NeJx3g5T0A1-nMjPuwfoQWoCbSWvaXl0RU2j4Rfomh3yUxhaFYAicPMHDtYuMTIHF8Qz3tkZtQ=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            },
+            "contentDetails": {
+                "totalItemCount": 272,
+                "newItemCount": 1,
+                "activityType": "all"
+            },
+            "subscriberSnippet": {
+                "title": "Lyle Okoth",
+                "description": "My channel's decription.",
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            }
+        },
+        {
+            "kind": "youtube#subscription",
+            "etag": "zsu1yAqWfi4sK4CwW--FkC8yaDU",
+            "id": "7eS6H9nd7liYCHzev9m6RXqiDNTWnhEbaw0jEI9hfPM",
+            "snippet": {
+                "publishedAt": "2019-05-13T15:48:56.760514Z",
+                "title": "ARK Invest",
+                "description": "\u00a92023. ARK Investment Management LLC focuses solely on investing in disruptive innovation. We strive to enlighten people on the impact innovation has on our lives. All statements made regarding companies, securities or other financial information on this site or any sites or articles relating to ARK are strictly beliefs and points of view held by ARK and are subject to change without notice. Certain statements may be statements of future expectations and other forward-looking statements that are based on ARK's current views and assumptions, and involve known and unknown risks and uncertainties that could cause actual results, performance or events to differ materially from those expressed or implied in such statements. Certain information was obtained from sources that ARK believes to be reliable; however, ARK does not guarantee the accuracy or completeness of any information obtained from any third party.\n\nFor full disclosure: https://ark-invest.com/terms-of-use",
+                "resourceId": {
+                    "kind": "youtube#channel",
+                    "channelId": "UCK-zlnUfoDHzUwXcbddtnkg"
+                },
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZQjPc9RBYCsLzScHx5Q-DnWZ5tGjnaeX7vxZ0Sn=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZQjPc9RBYCsLzScHx5Q-DnWZ5tGjnaeX7vxZ0Sn=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZQjPc9RBYCsLzScHx5Q-DnWZ5tGjnaeX7vxZ0Sn=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            },
+            "contentDetails": {
+                "totalItemCount": 373,
+                "newItemCount": 1,
+                "activityType": "all"
+            },
+            "subscriberSnippet": {
+                "title": "Lyle Okoth",
+                "description": "My channel's decription.",
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            }
+        },
+        {
+            "kind": "youtube#subscription",
+            "etag": "6dE520Bc7yx_zAOROLCyeeoGu_M",
+            "id": "7eS6H9nd7lgpFf7dGuYLYJrEkjK_SR4w4mqJPdggPVQ",
+            "snippet": {
+                "publishedAt": "2023-03-22T00:42:03.457714Z",
+                "title": "criminals and crime fighters",
+                "description": "Welcome to criminals and crime fighters \u2013 a documentary channel with factual content from ZDF Studios GmbH.\n\nOn this channel you\u00b4ll find full episodes of your favorite TV documentaries in high quality. Enjoy exciting manhunts, watch officers at their daily fight for justice and get a close look behind bars. \n\n----\n\nImprint\n\nHitchOn GmbH\n\nCEO: Sarah K\u00fcbler\n\nAn den Grachten 27\n55120 Mainz\nGermany\n\nPhone: +49 6131 - 2077 006\nWeb: www.HitchOn.de\nEmail: info@HitchOn.de\n\nCompany Headquarters: Mainz\n\nDistrict Court Mainz\nTrade Register No.HRB: 46438\nVAT-ID.no: DE 298 789 989",
+                "resourceId": {
+                    "kind": "youtube#channel",
+                    "channelId": "UCYuXyzwA_w4-c1FJrqOnR0A"
+                },
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/6X_UReqWnLR9ElcHg-pGaGN3aPjOryUTSvmaaCL2OdyEYx94foL622Bp53yTnUnER_inqgTPUQ=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/6X_UReqWnLR9ElcHg-pGaGN3aPjOryUTSvmaaCL2OdyEYx94foL622Bp53yTnUnER_inqgTPUQ=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/6X_UReqWnLR9ElcHg-pGaGN3aPjOryUTSvmaaCL2OdyEYx94foL622Bp53yTnUnER_inqgTPUQ=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            },
+            "contentDetails": {
+                "totalItemCount": 183,
+                "newItemCount": 1,
+                "activityType": "all"
+            },
+            "subscriberSnippet": {
+                "title": "Lyle Okoth",
+                "description": "My channel's decription.",
+                "channelId": "UCj3FYGvdAVNdD3M0dvKr3cA",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s88-c-k-c0x00ffffff-no-rj"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s240-c-k-c0x00ffffff-no-rj"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/ytc/AIf8zZTY42EoucZiKS3NdRqsaneTCBqh0R011euPUQRywA=s800-c-k-c0x00ffffff-no-rj"
+                    }
+                }
+            }
+        }
+    ]
+}
