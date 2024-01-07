@@ -244,7 +244,7 @@ class YouTube(BaseModel):
         channel: YouTubeChannel = YouTubeChannel(youtube_client=self.youtube_client)
         return channel.find_channels_by_ids(channel_ids)
 
-    def find_my_channel(self) -> Channel:
+    def find_my_channel(self) -> YouTubeListResponse:
         """Find the details fo your youtube channel."""
         channel: YouTubeChannel = YouTubeChannel(youtube_client=self.youtube_client)
         return channel.find_my_channel()
