@@ -1,3 +1,9 @@
+## v0.12.2 (2024-03-04)
+
+### Fix
+
+- adds the exception package.
+
 ## v0.12.1 (2024-03-04)
 
 ### Fix
