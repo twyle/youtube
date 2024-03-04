@@ -1,3 +1,9 @@
+## v0.12.1 (2024-03-04)
+
+### Fix
+
+- adds the activity and subscription packages.
+
 ## v0.12.0 (2024-03-04)
 
 ### Feat
