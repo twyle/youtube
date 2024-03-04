@@ -44,6 +44,7 @@ setup(
             'youtube.resources.channel',
             'youtube.resources.activity',
             'youtube.resources.subscription',
+            'youtube.exceptions',
         ]
     ),
     version=VERSION,
