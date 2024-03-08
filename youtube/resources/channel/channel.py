@@ -24,7 +24,7 @@ class YouTubeChannel(YouTubeResource):
     def parse_snippet(self, snippet_data: dict[str, Any]) -> ChannelSnippet:
         snippet: dict = dict(**self.parse_base_snippet(snippet_data).model_dump())
         snippet['custom_url'] = snippet_data['customUrl']
-        snippet['country'] = snippet_data['country']
+        snippet['country'] = snippet_data.get('country', '')
         snippet['localized'] = self.parse_localizations(snippet_data['localized'])
         return ChannelSnippet(**snippet)
 

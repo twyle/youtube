@@ -1,3 +1,28 @@
+## v0.12.2 (2024-03-04)
+
+### Fix
+
+- adds the exception package.
+
+## v0.12.1 (2024-03-04)
+
+### Fix
+
+- adds the activity and subscription packages.
+
+## v0.12.0 (2024-03-04)
+
+### Feat
+
+- adds the subscription and activity functionality.
+- adds the subscription exceptions.
+
+### Fix
+
+- gives country a default empty string.
+- updates the return type of find_my_channel function. (#13)
+- updates the return type of find_my_channel function.
+
 ## v0.11.1 (2024-01-06)
 
 ### Fix

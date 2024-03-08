@@ -81,7 +81,7 @@ The API uses an [MIT License](LICENSE)
 
 ## Developer
 
-Lyle Okoth – [@lylethedesigner](https://twitter.com/lylethedesigner) on twitter
+Lyle Okoth – [@lylethedesigner](https://twitter.com/lylethokoth) on twitter
 
 [lyle okoth](https://medium.com/@lyle-okoth) on medium
 
