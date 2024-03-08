@@ -14,6 +14,7 @@ from .models import (
     Subscription,
     Video,
 )
+from .resources.activity import YouTubeActivity
 from .resources.channel import YouTubeChannel
 from .resources.comment_thread import YouTubeCommentThread
 from .resources.playlist import YouTubePlaylist
@@ -21,7 +22,6 @@ from .resources.playlist_item import YouTubePlaylistItem
 from .resources.search import YouTubeSearch
 from .resources.subscription import YouTubeSubscription
 from .resources.video import YouTubeVideo
-from .resources.activity import YouTubeActivity
 from .schemas import (
     CreatePlaylist,
     CreatePlaylistItem,
@@ -340,12 +340,12 @@ class YouTube(BaseModel):
         )
         return comment_thread.find_video_comments(request)
 
-    def get_comments_iterator(self, request_schema: YouTubeResponse) -> Iterator:
+    def get_comments_iterator(self, video_id: str) -> Iterator:
         """Get an iterator for going through a videos comments."""
         comment_thread: YouTubeCommentThread = YouTubeCommentThread(
             youtube_client=self.youtube_client
         )
-        return comment_thread.get_comments_iterator(request_schema)
+        return comment_thread.get_comments_iterator(video_id=video_id)
 
     def find_all_channel_comments(self, request: YouTubeRequest) -> YouTubeListResponse:
         """Get a particular channels's comments."""

@@ -23,9 +23,9 @@ from ...schemas import (
     ActivityFilter,
     ActivityOptionalParameters,
     ActivityPart,
+    YouTubeListResponse,
     YouTubeRequest,
     YouTubeResponse,
-    YouTubeListResponse
 )
 from ..resource import YouTubeResource
 

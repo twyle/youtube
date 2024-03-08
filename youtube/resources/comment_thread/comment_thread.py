@@ -183,6 +183,14 @@ class YouTubeCommentThread(YouTubeResource):
             raise StopIteration()
         return response.items
 
-    def get_comments_iterator(self, request_schema: YouTubeResponse) -> Iterator:
-        self.request_schema = request_schema
+    def get_comments_iterator(self, video_id: str) -> Iterator:
+        part: CommentThreadPart = CommentThreadPart()
+        filter: CommentThreadFilter = CommentThreadFilter(videoId=video_id)
+        optional: CommentThreadOptionalParameters = CommentThreadOptionalParameters(
+            maxResults=25
+        )
+        request: YouTubeRequest = YouTubeRequest(
+            part=part, filter=filter, optional_parameters=optional
+        )
+        self.request_schema = request
         return self
