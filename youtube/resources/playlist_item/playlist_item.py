@@ -1,3 +1,4 @@
+from collections.abc import Iterator
 from typing import Any
 
 from ...models import BaseContentDetails, BaseSnippet, PlaylistItem
@@ -11,6 +12,7 @@ from ...schemas import (
     YouTubeResponse,
 )
 from ..resource import YouTubeResource
+from .playlist_items_iterator import PlaylistItemIterator
 
 
 class YouTubePlaylistItem(YouTubeResource):
@@ -92,6 +94,25 @@ class YouTubePlaylistItem(YouTubeResource):
         )
         find_items_result: dict = find_items_request.execute()
         return self.parse_youtube_response(find_items_result)
+
+    def get_playlist_items_iterator(
+        self, playlist_id: str, max_results: int = 25
+    ) -> Iterator:
+        part: PlaylistItemPart = PlaylistItemPart()
+        optional_params: PlaylistItemOptionalParameters = (
+            PlaylistItemOptionalParameters(maxResults=max_results)
+        )
+        request_filter: PlaylistItemFilter = PlaylistItemFilter(playlistId=playlist_id)
+        request_schema: YouTubeRequest = YouTubeRequest(
+            part=part, filter=request_filter, optional_parameters=optional_params
+        )
+        playlist_item_iterator: PlaylistItemIterator = PlaylistItemIterator(
+            request_creator=self.create_request_dict,
+            youtube_client=self.youtube_client,
+            response_parser=self.parse_youtube_response,
+            request_schema=request_schema,
+        )
+        return playlist_item_iterator
 
     def find_playlist_items_by_ids(
         self, playlist_item_ids: list[str]

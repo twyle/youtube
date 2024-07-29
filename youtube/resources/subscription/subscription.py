@@ -2,7 +2,8 @@ from typing import Any
 
 import googleapiclient.errors
 
-from youtube.models import Resource
+# from youtube.models import Resource
+from ...models import Resource
 
 from ...exceptions import SubscriptionDuplicate, SubscriptionForbidden, SubscriptionNotFound
 from ...models import BaseContentDetails, BaseSnippet, Subscription, SubscriptionSnippet
@@ -21,7 +22,8 @@ class YouTubeSubscription(YouTubeResource):
         super().__init__(youtube_client)
 
     def parse_snippet(self, snippet_data: dict[str, Any]) -> SubscriptionSnippet:
-        base_snippet: BaseSnippet = self.parse_base_snippet(snippet_data)
+        # base_snippet: BaseSnippet = self.parse_base_snippet(snippet_data)
+        pass
 
     def parse_item(self, item: dict) -> Resource:
         return super().parse_item(item)

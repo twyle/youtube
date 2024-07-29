@@ -261,10 +261,19 @@ class YouTube(BaseModel):
         playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
         return playlist.find_my_playlists()
 
+    def get_playlists_iterator(
+        self, channel_id: str, max_results: int = 25
+    ) -> Iterator:
+        """Get an iterator for iterating through playlists in your channel."""
+        playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
+        return playlist.get_playlists_iterator(
+            max_results=max_results, channel_id=channel_id
+        )
+
     def get_my_playlists_iterator(self, max_results: int = 10) -> Iterator:
         """Get an iterator for iterating through playlists in your channel."""
         playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
-        return playlist.get_my_playlists_iterator(max_results)
+        return playlist.get_my_playlists_iterator(max_results=max_results)
 
     def insert_playlist(self, playlist_schema: CreatePlaylist) -> Playlist:
         """Create a new playlist in your channel."""
@@ -282,6 +291,17 @@ class YouTube(BaseModel):
         """Delete a playlist in your channel."""
         playlist: YouTubePlaylist = YouTubePlaylist(youtube_client=self.youtube_client)
         return playlist.delete_playlist(playlist_id)
+
+    def get_playlist_items_iterator(
+        self, playlist_id: str, max_results: int = 25
+    ) -> Iterator:
+        """Get an iterator for iterating through playlists in your channel."""
+        playlist: YouTubePlaylistItem = YouTubePlaylistItem(
+            youtube_client=self.youtube_client
+        )
+        return playlist.get_playlist_items_iterator(
+            max_results=max_results, playlist_id=playlist_id
+        )
 
     def find_playlist_items(
         self, playlist_id: str, max_results: Optional[int] = 25

@@ -11,6 +11,7 @@ from ...schemas import (
     YouTubeResponse,
 )
 from ..resource import YouTubeResource
+from .playlist_iterators import PlaylistIterator
 
 
 class YouTubePlaylist(YouTubeResource):
@@ -154,3 +155,24 @@ class YouTubePlaylist(YouTubeResource):
             filter=request_filter,
         )
         return self
+
+    def get_playlists_iterator(
+        self, channel_id: str, max_results: int = 25
+    ) -> Iterator:
+        part: PlaylistPart = PlaylistPart()
+        request_filter: PlaylistFilter = PlaylistFilter(channelId=channel_id)
+        optional_params: PlaylistOptionalParameters = PlaylistOptionalParameters(
+            maxResults=max_results
+        )
+        request_schema: YouTubeRequest = YouTubeRequest(
+            part=part,
+            optional_parameters=optional_params,
+            filter=request_filter,
+        )
+        playlist_iterator: PlaylistIterator = PlaylistIterator(
+            request_creator=self.create_request_dict,
+            youtube_client=self.youtube_client,
+            response_parser=self.parse_youtube_response,
+            request_schema=request_schema,
+        )
+        return playlist_iterator
