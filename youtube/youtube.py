@@ -88,7 +88,7 @@ class YouTube(BaseModel):
             credentials_dir=credentials_dir,
         )
         youtube_client = oauth.authenticate_google_server()
-        return youtube_client
+        self.youtube_client = youtube_client
 
     def search(self, search_schema: YouTubeRequest) -> YouTubeResponse:
         """Used to search through youtube for videos, playlists and channels.
