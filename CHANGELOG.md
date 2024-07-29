@@ -1,3 +1,11 @@
+## v0.14.1 (2024-07-29)
+
+### Fix
+
+- authenticate creates the google client
+- updated the Resource import.
+- removed the unused base_snippet variable.
+
 ## v0.14.0 (2024-07-29)
 
 ### Feat
