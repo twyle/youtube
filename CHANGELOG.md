@@ -1,3 +1,10 @@
+## v0.13.0 (2024-07-29)
+
+### Feat
+
+- adds the iterator for playlists and playlist-items
+- adds the comment iterator.
+
 ## v0.12.2 (2024-03-04)
 
 ### Fix
