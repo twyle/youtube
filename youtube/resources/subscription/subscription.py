@@ -2,7 +2,8 @@ from typing import Any
 
 import googleapiclient.errors
 
-from youtube.models import Resource
+# from youtube.models import Resource
+from ...models import Resource
 
 from ...exceptions import SubscriptionDuplicate, SubscriptionForbidden, SubscriptionNotFound
 from ...models import BaseContentDetails, BaseSnippet, Subscription, SubscriptionSnippet
